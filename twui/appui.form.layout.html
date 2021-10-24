@@ -1,0 +1,69 @@
+{{ define "AppUIFormLayout" }}
+<form 
+  action="{{ .Action }}"
+  method="{{ .Method }}"
+  {{ if eq .Action "" }}
+    {{ formsubmit . }}
+  {{ end }}
+  class="w-full flex flex-col gap-4"
+>
+  <!-- Sections -->
+  {{ range .Sections }}
+    <div>
+      <!-- Title -->
+      {{ if .Title }}
+        <div class="text-xl font-bold">{{ .Title }}</div>
+      {{ end }}
+      <!-- Description -->
+      {{ if .Description }}
+        <div class="text-sm text-gray-600">{{ .Description }}</div>
+      {{ end }}
+      <!-- Separator -->
+      {{ if or .Title .Description }}
+        <div class="my-2 h-px bg-gray-200"></div>
+      {{ end }}
+      <!-- Fields -->
+      <div class="flex flex-wrap items-center gap-4">
+        {{ range .Fields }}
+          <!-- Field holder -->
+          <div class="{{ if .Width }} {{ .Width }} {{ else }} w-full {{ end }}">
+            <!-- Label -->
+            {{ if .Label }}
+            <label for="{{ .Name }}" class="mb-2 block text-sm font-medium text-gray-700">
+              {{ .Label }}
+            </label>
+            {{ end }}
+            <!-- Input -->
+            {{ if eq .Type "input" }}
+              <div class="w-full h-full flex rounded-md shadow-sm border border-gray-300">
+                {{ if .Preffix }}
+                <div class="px-2 flex-initial flex items-center text-gray-500">{{ .Preffix }}</div>
+                {{ end }}
+                <input type="{{ .InputType }}" placeholder="{{ .Placeholder }}" name="{{ .Name }}" class="h-full w-full px-3 py-2 {{ if .Preffix }} border-l rounded-r-md {{ else }} rounded-md {{ end }}">
+              </div>
+            <!-- Select -->
+            {{ else if eq .Type "select" }}
+              <select name="{{ .Name }}">
+                {{ range .Options }}
+                  <option value="{{ .Value }}">{{ .Label }}</option>
+                {{ end }}
+              </select>
+            <!-- Text Area -->
+            {{ else if eq .Type "textarea" }}
+              <textarea placeholder="{{ .Placeholder }}" name="{{ .Name }}" rows="5" class="w-full px-3 py-2 rounded-md shadow-sm border border-gray-300"></textarea>
+            {{ end }}
+          </div>
+        {{ end }}
+      </div>
+    </div>
+  {{ end }}
+  <!-- Actions -->
+  <div class="w-full flex items-center justify-end gap-2">
+    {{ range .Actions }}
+      <button type="submit" name="Action" value="{{ .Value }}" class="flex items-center gap-2 px-4 py-2 border rounded-md shadow-sm text-sm font-medium {{ if .Primary }} text-white border-transparent bg-indigo-600 hover:bg-indigo-700 {{ else }} text-gray-700 border-gray-300 bg-white hover:bg-gray-50 {{ end }} focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+        {{ .Text }}
+      </button>
+    {{ end }}
+  </div>
+</form>
+{{ end }}

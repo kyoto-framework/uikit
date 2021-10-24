@@ -1,0 +1,19 @@
+{{ define "AppUINavBreadcrumbs" }}
+<div class="flex flex-wrap items-center gap-2 text-gray-600 font-semibold {{ if .Contained }} px-3 py-3 bg-white shadow-sm {{ end }} {{ if .Rounded }} rounded-lg {{ end }}">
+  {{ range $i, $l := .Links }}
+    {{ if ne $i 0 }}
+      <div class="w-8 flex items-center justify-center">
+        {{ if eq $.Separator `arrow` }}
+          <svg class="mt-0.5 w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="4" d="M9 5l7 7-7 7"></path></svg>
+        {{ else if eq $.Separator `slash` }}
+          <div class="font-light">/</div>
+        {{ end }}
+      </div>
+    {{ end }}
+    <a href="{{ .Href }}" class="flex items-center justify-center whitespace-nowrap">
+      <div>{{ .Icon }}</div>
+      <div>{{ .Text }}</div>
+    </a>
+  {{ end }}
+</div>
+{{ end }}

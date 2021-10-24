@@ -1,0 +1,55 @@
+{{ define "AppUINavSidebar" }}
+<div {{ componentattrs . }} id="sidebar" class="h-full w-72 w-16 flex flex-col justify-between bg-gray-800 {{ if.InternalHidden }} -ml-72 {{ end }} transition-all">
+  <!-- Top -->
+  <div class="w-full flex flex-col">
+    <!-- Logo -->
+    <div class="px-4 py-8">
+      {{ .Logo }}
+    </div>
+    <!-- Search -->
+    {{ if .Search.Enabled }}
+      <div class="px-2 py-2">
+        <div class="relative rounded-lg overflow-hidden bg-gray-700 text-white">
+          <svg class="absolute left-2.5 top-3.5 w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
+          <form action="{{ .Search.Href }}" method="GET">
+            <input name="query" type="text" placeholder="Search ..." class="py-3 pl-9 w-full bg-gray-700">
+          </form>
+        </div>
+      </div>
+    {{ end }}
+    <!-- Links -->
+    <div class="px-2 flex flex-col">
+      {{ range .Links }}
+        <a href="{{ .Href }}" class="relative text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-3 rounded-md text-sm font-medium flex items-center">
+          {{ if $.InternalIconsUsed }}
+            <div class="w-6 h-6 mr-2">
+              {{ .Icon }}
+            </div>
+          {{ end }}
+          {{ .Text }}
+          {{ if ne .Counter 0 }}
+          <div class="px-3 absolute right-2 rounded-full flex items-center justify-center bg-gray-900">
+            {{ .Counter }}
+          </div>
+          {{ end }}
+        </a>
+      {{ end }}
+    </div>
+  </div>
+  <!-- Bottom -->
+  <div>
+    <!-- Profile -->
+    {{ if .Profile.Enabled }}
+      <a href="{{ .Profile.Href }}" class="px-3 py-3 flex items-center gap-3 bg-gray-900 text-white">
+        <!-- Photo -->
+        <img class="h-8 w-8 rounded-full" src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt="">
+        <!-- Name -->
+        <div>
+          <div class="font-bold">Tom Cook</div>
+          <div class="text-xs">View profile</div>
+        </div>
+      </a>
+    {{ end }}
+  </div>
+</div>
+{{ end }}

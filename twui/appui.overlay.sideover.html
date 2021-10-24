@@ -1,0 +1,11 @@
+{{ define "AppUIOverlaySideover" }}
+<div
+  {{ componentattrs . }}
+  id="{{ .ID }}"
+  class="{{ if ne .InternalActivated true }} hidden {{ end }} fixed inset-0 flex items-center justify-end bg-black bg-opacity-30"
+>
+  <div class="h-full w-full {{ .MaxWidth }} bg-white shadow">
+    {{ .Content }}
+  </div>
+</div>
+{{ end }}

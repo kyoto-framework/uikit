@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Application UI</title>
+    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-50">
+    <div class="max-w-screen-xl mx-auto overflow-hidden pb-16">
+        <div class="mt-8 text-3xl font-bold py-4">Application UI > Navigation > Navbar</div>
+        {{ template "AppUINavNavbar" .AppUINavNavbar }}
+        <div class="mt-8 text-3xl font-bold py-4">Application UI > Navigation > Sidebar</div>
+        <div style="height: 728px;" class="flex items-start">
+            {{ template "AppUINavSidebar" .AppUINavSidebar }}
+            <button class="p-4" onclick="{{ action `sidebar:Toggle` }}">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+            </button>
+        </div>
+        <div class="mt-8 text-3xl font-bold py-4">Application UI > Navigation > Breadcrumbs</div>
+        <div class="py-8 px-8 w-full flex flex-col gap-8">
+            {{ range .AppUINavBreadcrumbs }}
+            {{ template "AppUINavBreadcrumbs" . }}
+            {{ end }}
+        </div>
+        <div class="mt-8 text-3xl font-bold py-4">Application UI > Navigation > Pagination</div>
+        {{ template "AppUINavPagination" .AppUINavPagination }}
+        <div class="mt-8 text-3xl font-bold py-4">Application UI > Headings > Page</div>
+        <div class="py-8 w-full flex flex-col gap-16">
+            {{ range .AppUIHeadPage }}
+            {{ template "AppUIHeadPage" . }}
+            {{ end }}
+        </div>
+        <div class="mt-8 text-3xl font-bold py-4">Application UI > Overlay > Modal</div>
+        <button onclick="{{ action `TestModal:Open` }}" class="py-2 px-3 bg-blue-600 text-white font-bold rounded-lg">Open</button>
+        <div class="mt-8 text-3xl font-bold py-4">Application UI > Overlay > Side-over</div>
+        <button onclick="{{ action `TestSideover:Open` }}" class="py-2 px-3 bg-blue-600 text-white font-bold rounded-lg">Open</button>
+        <div class="mt-8 text-3xl font-bold py-4">Application UI > Data > Stats</div>
+        {{ template "AppUIDataStats" .AppUIDataStats }}
+        <div class="mt-8 text-3xl font-bold py-4">Application UI > Form > Layout</div>
+        <div class="w-full max-w-xl">
+            {{ template "AppUIFormLayout" .AppUIFormLayout }}
+        </div>
+        <div class="mt-8 text-3xl font-bold py-4">Application UI > List > Table</div>
+        <div style="height: 728px;">
+            {{ template "AppUIListTable" .AppUIListTable }}
+        </div>
+    </div>
+    {{ template "AppUIOverlayModal" .AppUIOverlayModal }}
+    {{ template "AppUIOverlaySideover" .AppUIOverlaySideover }}
+    {{ dynamics }}
+</body>
+</html>

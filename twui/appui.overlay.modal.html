@@ -1,0 +1,11 @@
+{{ define "AppUIOverlayModal" }}
+<div
+  {{ componentattrs . }}
+  id="{{ .ID }}"
+  class="{{ if ne .InternalActivated true }} hidden {{ end }} fixed inset-0 flex items-center justify-center bg-black bg-opacity-30"
+>
+  <div class="w-full {{ .MaxWidth }} bg-white rounded-lg shadow">
+    {{ .Content }}
+  </div>
+</div>
+{{ end }}
