@@ -1,0 +1,103 @@
+---
+sidebarDepth: 5
+---
+
+# Tailwind UI
+
+Tailwind UI Kit tries to replicate configurable set of components, provided by Tailwind UI with using of `kyoto` features.  
+Reference: [https://tailwindui.com/](https://tailwindui.com/)
+
+## Application UI
+
+Basic set of components.  
+Reference: [https://tailwindui.com/#product-application-ui](https://tailwindui.com/#product-application-ui)
+
+### Navigation
+
+---
+
+Components, responsible for navigation.  
+Reference: [https://tailwindui.com/#product-application-ui-navigation](https://tailwindui.com/#product-application-ui-navigation)
+
+#### Navbar
+
+---
+
+**UI:**
+
+![navbar](/examples/navbar.jpg)
+
+**Arguments:**
+
+| Argument | Type | Description |
+| -------- | ---- | ----------- |
+| Logo | `template.HTML` | RAW HTML, will be injected as logo |
+| Links |  `[]AppUINavNavbarLink` | List of links |
+| Search |  `AppUINavNavbarSearch` | Interactive search field configuration |
+| Notifications | `AppUINavNavbarNotifications` | Notifications badge configuration |
+| Profile | `AppUINavNavbarProfile` | Profile badge configuration |
+
+**Notes:**
+
+- On search submit, you will be redirected to page provided in `AppUINavNavbarSearch.Href`. Query will be passed as `?query=...`
+
+**Files:**
+
+- [appui.nav.navbar.go](https://github.com/yuriizinets/kyoto-uikit/blob/master/twui/appui.nav.navbar.go)
+- [appui.nav.navbar.html](https://github.com/yuriizinets/kyoto-uikit/blob/master/twui/appui.nav.navbar.html)
+
+:::details Example
+
+```go
+func (p *PageExample) Init() {
+    p.Navbar = kyoto.RegC(p, &twui.AppUINavNavbar{
+        Logo: template.HTML(`<a href="/" class="text-white text-2xl font-bold">TWUI</a>`),
+        Links: []twui.AppUINavNavbarLink{
+            {Text: "Dashboard", Href: "#"},
+            {Text: "Team", Href: "#"},
+            {Text: "Projects", Href: "#"},
+            {Text: "Calendar", Href: "#"},
+        },
+        Search: twui.AppUINavNavbarSearch{
+            Enabled: true,
+            Href:    "/",
+        },
+        Notifications: twui.AppUINavNavbarNotifications{
+            Enabled: true,
+            Href:    "#",
+            Counter: 4,
+        },
+        Profile: twui.AppUINavNavbarProfile{
+            Enabled: true,
+            Avatar:  `<img class="h-8 w-8 rounded-full" src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80">`,
+            Links: []twui.AppUINavNavbarLink{
+                {Text: "Your Profile", Href: "#"},
+                {Text: "Settings", Href: "#"},
+                {Text: "Sign Out", Href: "#"},
+            },
+        },
+    })
+}
+```
+
+:::
+
+### Heading
+
+---
+
+### Data
+
+---
+
+### List
+
+---
+
+### Overlay
+
+---
+
+## Marketing
+
+## E-Commerce
