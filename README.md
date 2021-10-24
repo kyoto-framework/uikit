@@ -1,4 +1,4 @@
 
-# Kyoto UIKit
+# kyoto uikit
 
 UIKit for rapid development
