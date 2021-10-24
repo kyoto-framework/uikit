@@ -1,4 +1,8 @@
 
+<p align="center">
+    <img src="https://raw.githubusercontent.com/yuriizinets/kyoto-uikit/master/.docs/.vuepress/public/avatar.svg" />
+</p>
+
 # kyoto uikit
 
 UIKit for rapid development
