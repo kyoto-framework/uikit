@@ -7,6 +7,7 @@ const (
 	FORM_SELECT   = "select"
 	FORM_TEXTAREA = "textarea"
 	FORM_CHECKBOX = "checkbox"
+	FORM_RADIO    = "radio"
 	FORM_RAW      = "raw"
 )
 
@@ -42,6 +43,7 @@ type AppUIFormLayoutField struct {
 	Width       string // w-full by default, check https://tailwindcss.com/docs/width
 	Options     []AppUIFormLayoutSelectOption
 	Disabled    bool
+	Checked     bool
 	RAW         template.HTML
 }
 

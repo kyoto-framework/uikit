@@ -286,6 +286,19 @@ func (p *TestAppUIPage) Init() {
 						Placeholder: "Here is some information about me ...",
 						Description: "Brief description for your profile",
 					},
+					{
+						Type:    FORM_RADIO,
+						Name:    "UnderEighteen",
+						Label:   "I'm under 18",
+						Value:   "true",
+						Checked: true,
+					},
+					{
+						Type:  FORM_RADIO,
+						Name:  "UnderEighteen",
+						Label: "I'm above 18",
+						Value: "false",
+					},
 				},
 			},
 			{
