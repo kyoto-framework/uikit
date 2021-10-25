@@ -7,9 +7,9 @@ actions:
   - text: General
     link: /general
   - text: Tailwind UI
-    link: /tailwindui
+    link: /tailwind-ui/
     type: secondary
   - text: Material
-    link: /material
+    link: /material/
     type: secondary
 ---

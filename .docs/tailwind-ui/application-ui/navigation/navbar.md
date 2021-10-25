@@ -1,33 +1,13 @@
----
-sidebarDepth: 5
----
 
-# Tailwind UI
+# Navbar - `AppUINavNavbar`
 
-Tailwind UI Kit tries to replicate configurable set of components, provided by Tailwind UI with using of `kyoto` features.  
-Reference: [https://tailwindui.com/](https://tailwindui.com/)
+Basic navbar component with set of "extensions", like search, notifications badge, profile badge, etc.
 
-## Application UI
-
-Basic set of components.  
-Reference: [https://tailwindui.com/#product-application-ui](https://tailwindui.com/#product-application-ui)
-
-### Navigation
-
----
-
-Components, responsible for navigation.  
-Reference: [https://tailwindui.com/#product-application-ui-navigation](https://tailwindui.com/#product-application-ui-navigation)
-
-#### Navbar
-
----
-
-**UI:**
+## UI
 
 ![navbar](/examples/navbar.jpg)
 
-**Arguments:**
+## Arguments
 
 | Argument | Type | Description |
 | -------- | ---- | ----------- |
@@ -37,16 +17,16 @@ Reference: [https://tailwindui.com/#product-application-ui-navigation](https://t
 | Notifications | `AppUINavNavbarNotifications` | Notifications badge configuration |
 | Profile | `AppUINavNavbarProfile` | Profile badge configuration |
 
-**Notes:**
+## Notes
 
 - On search submit, you will be redirected to page provided in `AppUINavNavbarSearch.Href`. Query will be passed as `?query=...`
 
-**Files:**
+## Files
 
 - [appui.nav.navbar.go](https://github.com/yuriizinets/kyoto-uikit/blob/master/twui/appui.nav.navbar.go)
 - [appui.nav.navbar.html](https://github.com/yuriizinets/kyoto-uikit/blob/master/twui/appui.nav.navbar.html)
 
-:::details Example
+## Example
 
 ```go
 func (p *PageExample) Init() {
@@ -79,25 +59,3 @@ func (p *PageExample) Init() {
     })
 }
 ```
-
-:::
-
-### Heading
-
----
-
-### Data
-
----
-
-### List
-
----
-
-### Overlay
-
----
-
-## Marketing
-
-## E-Commerce
