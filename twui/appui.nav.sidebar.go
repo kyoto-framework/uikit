@@ -44,11 +44,6 @@ type AppUINavSidebarSearch struct {
 	Href    string // value will be passed as ?query={}
 }
 
-type AppUINavSidebarProfileLink struct {
-	Text string
-	Href string
-}
-
 type AppUINavSidebarProfile struct {
 	Enabled  bool
 	Avatar   template.HTML
