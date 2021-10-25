@@ -1,3 +1,6 @@
+---
+next: /tailwind-ui/
+---
 
 # General
 
