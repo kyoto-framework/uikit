@@ -3,6 +3,7 @@ package twui
 import "html/template"
 
 type AppUIDataStats struct {
+	Wrap  bool
 	Items []AppUIDataStatsItem
 }
 
