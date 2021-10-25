@@ -7,7 +7,7 @@ const (
 	FORM_SELECT   = "select"
 	FORM_TEXTAREA = "textarea"
 	FORM_CHECKBOX = "checkbox"
-	FORM_CUSTOM   = "custom"
+	FORM_RAW      = "raw"
 )
 
 type AppUIFormLayout struct {
@@ -34,6 +34,7 @@ type AppUIFormLayoutField struct {
 	Type        string
 	InputType   string
 	Name        string
+	Value       string
 	Label       string
 	Preffix     string
 	Description string
