@@ -299,6 +299,11 @@ func (p *TestAppUIPage) Init() {
 						Label: "I'm above 18",
 						Value: "false",
 					},
+					{
+						Type:  FORM_CHECKBOX,
+						Name:  "MarketingEnabled",
+						Label: "Enable marketing emails",
+					},
 				},
 			},
 			{
