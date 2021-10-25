@@ -42,11 +42,13 @@
     {{ if .Profile.Enabled }}
       <a href="{{ .Profile.Href }}" class="px-3 py-3 flex items-center gap-3 bg-gray-900 text-white">
         <!-- Photo -->
-        <img class="h-8 w-8 rounded-full" src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt="">
+        {{ .Profile.Avatar }}
         <!-- Name -->
         <div>
-          <div class="font-bold">Tom Cook</div>
-          <div class="text-xs">View profile</div>
+          {{ if ne .Profile.Username "" }}
+          <div class="font-bold">{{ .Profile.Username }}</div>
+          {{ end }}
+          <div class="text-xs">{{ .Profile.Text }}</div>
         </div>
       </a>
     {{ end }}
