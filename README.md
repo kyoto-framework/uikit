@@ -5,6 +5,8 @@
 
 # kyoto uikit
 
+[![Go Report Card](https://goreportcard.com/badge/github.com/yuriizinets/kyoto-uikit)](https://goreportcard.com/report/github.com/yuriizinets/kyoto-uikit)
+
 UIKit for rapid development
 
 ## Requirements
