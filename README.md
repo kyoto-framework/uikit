@@ -3,11 +3,15 @@
     <img src="https://raw.githubusercontent.com/yuriizinets/kyoto-uikit/master/.docs/.vuepress/public/avatar.svg" />
 </p>
 
-# kyoto uikit
+<h1 align="center">kyoto uikit</h1>
+<p align="center">
+    UIKit for rapid development
+</p>
 
+![License](https://img.shields.io/github/license/yuriizinets/kyoto-uikit)
+[![Go Reference](https://pkg.go.dev/badge/github.com/yuriizinets/kyoto.svg)](https://pkg.go.dev/github.com/yuriizinets/kyoto)
 [![Go Report Card](https://goreportcard.com/badge/github.com/yuriizinets/kyoto-uikit)](https://goreportcard.com/report/github.com/yuriizinets/kyoto-uikit)
 
-UIKit for rapid development
 
 ## Requirements
 
