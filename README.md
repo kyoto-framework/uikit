@@ -8,6 +8,7 @@ UIKit for rapid development
 - `kyoto` page
 - configured SSA
 - basic knowledge of `kyoto`
+- (twui) configured tailwindcss
 
 ## Installation
 
