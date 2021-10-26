@@ -17,6 +17,7 @@ type TestAppUIPage struct {
 	AppUIOverlaySideover kyoto.Component
 	AppUIDataStats       kyoto.Component
 	AppUIFormLayout      kyoto.Component
+	AppUIFormSignIn      kyoto.Component
 	AppUIListTable       kyoto.Component
 }
 
@@ -26,7 +27,9 @@ func (p *TestAppUIPage) Template() *template.Template {
 
 func (p *TestAppUIPage) Init() {
 	p.AppUINavNavbar = kyoto.RegC(p, &AppUINavNavbar{
-		Logo: template.HTML(`<a href="/" class="text-white text-2xl font-bold">TWUI</a>`),
+		Logo: template.HTML(`<a href="/">
+			<img src="https://raw.githubusercontent.com/yuriizinets/kyoto/master/.web/docs/.vuepress/public/kyoto.svg" class="h-8 w-8 scale-150" />
+		</a>`),
 		Links: []AppUINavNavbarLink{
 			{Text: "Dashboard", Href: "#"},
 			{Text: "Team", Href: "#"},
@@ -54,7 +57,9 @@ func (p *TestAppUIPage) Init() {
 		},
 	})
 	p.AppUINavSidebar = kyoto.RegC(p, &AppUINavSidebar{
-		Logo: template.HTML(`<a href="/" class="text-white text-2xl font-bold">TWUI</a>`),
+		Logo: template.HTML(`<a href="/">
+			<img src="https://raw.githubusercontent.com/yuriizinets/kyoto/master/.web/docs/.vuepress/public/kyoto.svg" class="mx-auto h-16 w-16 scale-150" />
+		</a>`),
 		Search: AppUINavSidebarSearch{
 			Enabled: true,
 		},
@@ -362,6 +367,10 @@ func (p *TestAppUIPage) Init() {
 			{Text: "Reset", Value: "Reset"},
 			{Text: "Submit", Value: "Submit", Primary: true},
 		},
+	})
+	p.AppUIFormSignIn = kyoto.RegC(p, &AppUIFormSignIn{
+		Logo:          `<img class="w-32 h-32" src="https://raw.githubusercontent.com/yuriizinets/kyoto/master/.web/docs/.vuepress/public/kyoto.svg" />`,
+		ResetPassword: "/",
 	})
 	rows := []map[string]template.HTML{}
 	for i := 0; i < 100; i++ {

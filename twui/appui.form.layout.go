@@ -25,10 +25,11 @@ type AppUIFormLayoutSection struct {
 }
 
 type AppUIFormLayoutAction struct {
-	Icon    template.HTML
-	Text    string
-	Value   string
-	Primary bool
+	Icon      template.HTML
+	Text      string
+	Value     string
+	Primary   bool
+	FullWidth bool
 }
 
 type AppUIFormLayoutField struct {
