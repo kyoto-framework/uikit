@@ -38,7 +38,8 @@ func (p *TestAppUIPage) Init() {
 		},
 		Search: AppUINavNavbarSearch{
 			Enabled: true,
-			Href:    "/",
+			Action:  "/",
+			Method:  "GET",
 		},
 		Notifications: AppUINavNavbarNotifications{
 			Enabled: true,
