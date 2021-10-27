@@ -22,10 +22,12 @@ type MarketingSectionFooterMain struct {
 type MarketingSecionsFooterNewsletter struct {
 	Enabled bool
 
-	Title  string
-	Text   string
-	Field  MarketingSectionFooterInput
-	Action MarketingSectionFooterAction
+	Action  string
+	Method  string
+	Title   string
+	Text    string
+	Field   MarketingSectionFooterInput
+	Actions MarketingSectionFooterAction
 }
 
 type MarketingSectionFooterSimple struct {

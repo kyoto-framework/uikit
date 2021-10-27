@@ -49,17 +49,20 @@
                     <div class="mr-4 {{ if .Dark }} text-gray-300 {{ else }} text-gray-500 {{ end }} tracking-wide font-light">{{ .Main.Newsletter.Text }}</div>
                 </div>
                 <!-- Main.Newsletter input -->
-                <div class="flex flex-row gap-x-4 items-center">
+                <form 
+                action="{{ .Newsletter.Action }}"
+                method="{{ .Newsletter.Method }}"
+                class="flex flex-row gap-x-4 items-center">
                     <div class="w-full h-12 flex rounded-md shadow-sm border border-gray-300">
                         {{ if .Main.Newsletter.Field.Preffix }}
                         <div class="px-2 flex-initial flex items-center {{ if .Dark }} text-gray-300 {{ else }} text-gray-500 {{ end }}">{{ .Main.Newsletter.Field.Preffix }}</div>
                         {{ end }}
                         <input type="input" placeholder="{{ .Main.Newsletter.Field.Placeholder }}" name="{{ .Main.Newsletter.Field.Name }}" value="{{ .Main.Newsletter.Field.Value }}" class="h-full w-full px-3 py-2 {{ if .Main.Newsletter.Field.Preffix }} border-l rounded-r-md {{ else }} rounded-md {{ end }}">
                     </div>
-                    <button type="submit" name="Action" value="{{ .Main.Newsletter.Action.Value }}" class="h-12 flex items-center gap-2 px-4 py-2 border rounded-md shadow-sm text-sm font-medium {{ if .Main.Newsletter.Action.Primary }} text-white border-transparent bg-indigo-600 hover:bg-indigo-700 {{ else }} text-gray-700 border-gray-300 bg-white hover:bg-gray-50 {{ end }} focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
-                        {{ .Main.Newsletter.Action.Text }}
+                    <button type="submit" name="Action" value="{{ .Main.Newsletter.Actions.Value }}" class="h-12 flex items-center gap-2 px-4 py-2 border rounded-md shadow-sm text-sm font-medium {{ if .Main.Newsletter.Actions.Primary }} text-white border-transparent bg-indigo-600 hover:bg-indigo-700 {{ else }} text-gray-700 border-gray-300 bg-white hover:bg-gray-50 {{ end }} focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+                        {{ .Main.Newsletter.Actions.Text }}
                     </button>
-                </div>
+                </form>
             </div>
             {{ end }}
             <!-- Links blocks -->
@@ -79,7 +82,10 @@
         {{ end }}
         <!-- Newsletter section -->
         {{ if .Newsletter.Enabled }}
-        <div class="flex gap-y-4 md:gap-y-0 flex-col md:flex-row py-10 justify-between">
+        <form 
+        action="{{ .Newsletter.Action }}"
+        method="{{ .Newsletter.Method }}"
+        class="flex gap-y-4 md:gap-y-0 flex-col md:flex-row py-10 justify-between">
             <!-- Newsletter section title and text -->
             <div class="flex flex-col gap-y-4">
                 <div class="uppercase text-gray-400 font-medium text-sm tracking-wider">{{ .Newsletter.Title }}</div>
@@ -93,11 +99,11 @@
                     {{ end }}
                     <input type="input" placeholder="{{ .Newsletter.Field.Placeholder }}" name="{{ .Newsletter.Field.Name }}" value="{{ .Newsletter.Field.Value }}" class="h-full w-full px-3 py-2 {{ if .Newsletter.Field.Preffix }} border-l rounded-r-md {{ else }} rounded-md {{ end }}">
                 </div>
-                <button type="submit" name="Action" value="{{ .Newsletter.Action.Value }}" class="h-12 flex items-center gap-2 px-4 py-2 border rounded-md shadow-sm text-sm font-medium {{ if .Newsletter.Action.Primary }} text-white border-transparent bg-indigo-600 hover:bg-indigo-700 {{ else }} text-gray-700 border-gray-300 bg-white hover:bg-gray-50 {{ end }} focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
-                    {{ .Newsletter.Action.Text }}
+                <button type="submit" name="Action" value="{{ .Newsletter.Actions.Value }}" class="h-12 flex items-center gap-2 px-4 py-2 border rounded-md shadow-sm text-sm font-medium {{ if .Newsletter.Actions.Primary }} text-white border-transparent bg-indigo-600 hover:bg-indigo-700 {{ else }} text-gray-700 border-gray-300 bg-white hover:bg-gray-50 {{ end }} focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+                    {{ .Newsletter.Actions.Text }}
                 </button>
             </div>
-        </div>
+        </form>
         {{ end }}
         <!-- Simple section -->
         {{ if .Simple.Enabled }}

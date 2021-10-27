@@ -263,6 +263,8 @@ func (p *TestMarketingPage) Init() {
 		},
 		Newsletter: MarketingSecionsFooterNewsletter{
 			Enabled: true,
+			Action:  "/",
+			Method:  "GET",
 			Title:   "Subscribe to our newsletter",
 			Text:    "The latest news, articles, and resources, sent to your inbox weekly.",
 			Field: MarketingSectionFooterInput{
@@ -270,7 +272,7 @@ func (p *TestMarketingPage) Init() {
 				Label:       "Email address",
 				Placeholder: "Enter your email",
 			},
-			Action: MarketingSectionFooterAction{
+			Actions: MarketingSectionFooterAction{
 				Text:    "Subscribe",
 				Value:   "Subscribe",
 				Primary: true,
@@ -395,6 +397,8 @@ func (p *TestMarketingPage) Init() {
 			},
 			Newsletter: MarketingSecionsFooterNewsletter{
 				Enabled: true,
+				Action:  "/",
+				Method:  "GET",
 				Title:   "Subscribe to our newsletter",
 				Text:    "The latest news, articles, and resources, sent to your inbox weekly.",
 				Field: MarketingSectionFooterInput{
@@ -402,7 +406,7 @@ func (p *TestMarketingPage) Init() {
 					Label:       "Email address",
 					Placeholder: "Enter your email",
 				},
-				Action: MarketingSectionFooterAction{
+				Actions: MarketingSectionFooterAction{
 					Text:    "Subscribe",
 					Value:   "Subscribe",
 					Primary: true,
