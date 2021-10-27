@@ -2,9 +2,6 @@
 <form 
   action="{{ .Action }}"
   method="{{ .Method }}"
-  {{ if eq .Action "" }}
-    {{ formsubmit }}
-  {{ end }}
   class="w-full flex flex-col gap-9"
 >
   <!-- Sections -->
