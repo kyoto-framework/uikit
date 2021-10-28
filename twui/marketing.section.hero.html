@@ -9,11 +9,14 @@
         </svg>
         {{ end }}
         {{ if .Navbar.Enabled }}
+        <!-- Navbar -->
         <div>
+          <!-- Desktop navbar -->
           <div class="relative {{ if .Navbar.Splitted }} bg-white shadow-lg pb-4 {{ end }} border-black pt-6 px-4 sm:px-6 lg:px-8">
             <nav class="relative flex items-center justify-between sm:h-10 {{ if .Navbar.Centered }} lg:justify-between {{ else }} lg:justify-start {{ end }}" aria-label="Global">
               <div class="flex items-center flex-grow flex-shrink-0 lg:flex-grow-0">
                 <div class="flex items-center justify-between w-full md:w-auto">
+                  <!-- Logo -->
                   {{ .Navbar.Logo }}
                   <div class="-mr-2 flex items-center md:hidden">
                     <button type="button" onclick="{{ action `ToggleMobileMenu` }}" class="bg-white rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500" aria-expanded="false">
@@ -26,6 +29,7 @@
                   </div>
                 </div>
               </div>
+              <!-- Links -->
               <div class="flex flex-row hidden md:block md:ml-10 md:space-x-8">
                 {{ range .Navbar.Links }}
                 {{ if eq (len .Links) 0 }}
@@ -35,6 +39,7 @@
                     <button class="font-medium text-gray-500 hover:text-gray-900">
                         <span class="flex flex-row items-center">{{ .Text }} <svg class="pt-1 fill-current h-4 w-4 transition-all"  {{ if eq $.Navbar.InternalOpenedDropdown .Text }} transform="translate(0, 2) rotate(180)" {{ end }} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"/></svg></span>
                     </button>
+                    <!-- Nested links -->
                     <div class="flex flex-col space-y-3 border transition-all transform origin-top rounded shadow bg-white p-2 absolute left-0 {{ if eq $.Navbar.InternalOpenedDropdown .Text }} scale-y-100 {{ else }} scale-y-0 {{ end }}">
                         {{ range .Links }}
                             <a href="{{ .Href }}" class="font-medium text-gray-500 hover:text-gray-900">{{ .Text }}</a>
@@ -54,17 +59,11 @@
   
           <!--
             Mobile menu, show/hide based on menu open state.
-  
-            Entering: "duration-150 ease-out"
-              From: "opacity-0 scale-95"
-              To: "opacity-100 scale-100"
-            Leaving: "duration-100 ease-in"
-              From: "opacity-100 scale-100"
-              To: "opacity-0 scale-95"
           -->
           <div class="{{ if .Navbar.InternalMobileMenuOpened }} block {{ else }} hidden {{ end }} absolute z-10 top-0 inset-x-0 p-2 transition transform origin-top-right md:hidden">
             <div class="rounded-lg shadow-md bg-white ring-1 ring-black ring-opacity-5 overflow-hidden">
               <div class="px-5 pt-4 flex items-center justify-between">
+                <!-- Logo -->
                 <div>
                     {{ .Navbar.Logo }}
                 </div>
@@ -78,16 +77,18 @@
                   </button>
                 </div>
               </div>
+              <!-- Links -->
               <div class="px-2 pt-2 pb-3 space-y-1">
                 {{ range .Navbar.Links }}
                 {{ if eq (len .Links ) 0 }}
                 <a href="{{ .Href }}" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50">{{ .Text }}</a>
                 {{ else }}
                 <span>
-                    <button onclick="{{ action `ToggleDropdown` .Text }}" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50">
+                    <button onclick="{{ action `ToggleDropdown` .Text }}" class="w-full block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50">
                         <span class="flex flex-row items-center">{{ .Text }} <svg class="pt-1 fill-current h-4 w-4 transition-all"  {{ if eq $.Navbar.InternalOpenedDropdown .Text }} transform="translate(0, 2) rotate(180)" {{ end }} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"/></svg></span>
                     </button>
-                    <div class="flex flex-col space-y-3 transition-all transform bg-white p-2 {{ if eq $.Navbar.InternalOpenedDropdown .Text }} block {{ else }} hidden {{ end }}">
+                    <!-- Nested links -->
+                    <div class="flex flex-col space-y-3 bg-white p-2 {{ if eq $.Navbar.InternalOpenedDropdown .Text }} block {{ else }} hidden {{ end }}">
                         {{ range .Links }}
                             <a href="{{ .Href }}" class="block px-3 py-2 rounded-md text-base font-medium text-gray-500 hover:text-gray-900 hover:bg-gray-50">{{ .Text }}</a>
                         {{ end }}
@@ -109,7 +110,7 @@
         <div class="relative pt-6 px-4 sm:px-6 lg:px-8"></div>
         {{ end }}
         {{ end }}
-  
+        <!-- Body -->
         <main class="mt-10 mx-auto max-w-7xl px-4 sm:mt-12 sm:px-6 md:mt-16 lg:mt-20 lg:px-8 xl:mt-28">
           <div class="sm:text-center {{ if .Body.Centered }} text-center {{ else }} lg:text-left {{ end }}">
             <h1 class="text-4xl tracking-tight font-extrabold text-gray-900 sm:text-5xl md:text-6xl">
@@ -132,6 +133,7 @@
         </main>
       </div>
     </div>
+    <!-- Body image -->
     {{ if .Body.Image.Src }}
     <div class="lg:absolute lg:inset-y-0 lg:right-0 lg:w-1/2">
       <img class="h-56 w-full object-cover sm:h-72 md:h-96 lg:w-full lg:h-full" src="{{ .Body.Image.Src }}" alt="">
