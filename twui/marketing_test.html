@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Marketing</title>
+    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-50">
+    <div class="max-w-screen-xl mx-auto overflow-hidden pb-16">
+        <div class="mt-8 text-3xl font-bold py-4">Footer</div>
+        <div class="tracking-wide p-4"> 4-column with company mission</div>
+        {{ template "MarketingSectionFooter" .MarketingSectionFooter }}
+        <div class="tracking-wide p-4"> 4-column with newsletter and localization (dark)</div>
+        {{ template "MarketingSectionFooter" .MarketingSectionFooter2 }}
+        <div class="tracking-wide p-4"> 4-column with newsletter</div>
+        {{ template "MarketingSectionFooter" .MarketingSectionFooter3 }}
+        <div class="tracking-wide p-4"> Simple centered</div>
+        {{ template "MarketingSectionFooter" .MarketingSectionFooter4 }}
+        <div class="tracking-wide p-4"> Social links only</div>
+        {{ template "MarketingSectionFooter" .MarketingSectionFooter5 }}
+    </div>
+    {{ dynamics }}
+</body>
+</html>

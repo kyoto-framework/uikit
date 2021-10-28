@@ -1,0 +1,135 @@
+{{ define "MarketingSectionFooter" }}
+<div>
+    <div class="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8 border border-8 rounded-lg border-gray-200 divide-y {{ if .Dark }} divide-gray-600 bg-gray-800 {{ else }} bg-white {{ end }} gap-y-8">
+        <!-- Main section -->
+        {{ if .Main.Enabled }}
+        <div class="flex {{ if .Main.Reverse }} md:flex-row-reverse flex-col-reverse {{ else }} md:flex-row flex-col {{ end }} justify-between gap-y-8 md:gap-y-0 md:space-x-4 text-gray-500 py-12">
+            <!-- Company mission block -->
+            {{ if .Main.Company.Enabled }}
+            <div class="flex flex-col md:w-1/3 space-y-4 {{ if .Dark }} text-gray-300 {{ else }} text-gray-500 {{ end }}">
+                <!-- Logo (html template)-->
+                <div class="">{{ .Main.Company.Logo }}</div>
+                <!-- Text -->
+                <div class="font-light tracking-wide md:w-5/6 lg:w-4/5">{{ .Main.Company.Text }}</div>
+                <!-- Socials-->
+                <div class="flex flex-row space-x-7">
+                    {{ range .Main.Company.Socials }}
+                        <a href="{{ .Href }}">{{ .Icon }}</a>
+                    {{ end }}
+                </div>
+            </div>
+            {{ end }}
+            <!-- Localization block -->
+            {{ if .Main.Localization.Enabled }}
+            <div class="flex flex-col w-full md:w-1/{{ len .Main.Blocks }} space-y-4">
+                <!-- Localization block title -->
+                <div class="uppercase text-gray-400 font-medium text-sm tracking-wider">{{ .Main.Localization.Title }}</div>
+                <!-- Localization block fields -->
+                {{ range $findex, $f := .Main.Localization.Fields }}
+                <div class="justify-start w-3/4 relative flex rounded-md shadow-sm {{ if eq $.Dark false }}border border-gray-300 {{ end }}">
+                    {{ if .Preffix }}
+                    <div class="px-2 flex-initial flex items-center {{ if $.Dark }} text-gray-300 {{ else }} text-gray-500 {{ end }}">{{ .Preffix }}</div>
+                    {{ end }}
+                    <select name="{{ .Name }}" value="{{ .Value }}" class="{{ if $.Dark }} text-gray-300 bg-gray-700 {{ end }} h-full w-full px-3 py-2 appearance-none {{ if .Preffix }} border-l rounded-r-md {{ else }} rounded-md {{ end }}">
+                      {{ range .Options }}
+                        <option value="{{ .Value }}" {{ if eq .Value $f.Value }} selected {{ end }}>{{ .Label }}</option>
+                      {{ end }}
+                    </select>
+                    <svg class="absolute right-2 top-3 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                </div>
+                {{ end }}
+            </div>
+            {{ end }}
+            <!-- Newsletter block -->
+            {{ if .Main.Newsletter.Enabled }}
+            <div class="flex flex-col md:w-1/3 space-y-4">
+                <!-- Main.Newsletter title and text -->
+                <div class="flex flex-col gap-y-4">
+                    <div class="uppercase text-gray-400 font-medium text-sm tracking-wider">{{ .Main.Newsletter.Title }}</div>
+                    <div class="mr-4 {{ if .Dark }} text-gray-300 {{ else }} text-gray-500 {{ end }} tracking-wide font-light">{{ .Main.Newsletter.Text }}</div>
+                </div>
+                <!-- Main.Newsletter input -->
+                <form 
+                action="{{ .Newsletter.Action }}"
+                method="{{ .Newsletter.Method }}"
+                class="flex flex-row gap-x-4 items-center">
+                    <div class="w-full h-12 flex rounded-md shadow-sm border border-gray-300">
+                        {{ if .Main.Newsletter.Input.Preffix }}
+                        <div class="px-2 flex-initial flex items-center {{ if .Dark }} text-gray-300 {{ else }} text-gray-500 {{ end }}">{{ .Main.Newsletter.Input.Preffix }}</div>
+                        {{ end }}
+                        <input type="input" placeholder="{{ .Main.Newsletter.Input.Placeholder }}" name="{{ .Main.Newsletter.Input.Name }}" value="{{ .Main.Newsletter.Input.Value }}" class="h-full w-full px-3 py-2 {{ if .Main.Newsletter.Input.Preffix }} border-l rounded-r-md {{ else }} rounded-md {{ end }}">
+                    </div>
+                    <button type="submit" name="Action" value="{{ .Main.Newsletter.Button.Value }}" class="h-12 flex items-center gap-2 px-4 py-2 border rounded-md shadow-sm text-sm font-medium {{ if .Main.Newsletter.Button.Primary }} text-white border-transparent bg-indigo-600 hover:bg-indigo-700 {{ else }} text-gray-700 border-gray-300 bg-white hover:bg-gray-50 {{ end }} focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+                        {{ .Main.Newsletter.Button.Text }}
+                    </button>
+                </form>
+            </div>
+            {{ end }}
+            <!-- Links blocks -->
+            <div class="flex flex-row flex-grow flex-wrap items-start">
+            {{ range .Main.Blocks }}
+                <div class="flex flex-col flex-wrap space-y-4 py-4 md:py-0 justify-start w-1/2 md:w-1/{{ len $.Main.Blocks }}">
+                    <!-- Block title -->
+                    <h4 class="uppercase text-gray-400 font-medium text-sm tracking-wider">{{ .Title }}</h4>
+                    <!-- Links -->
+                    {{ range .Links }}
+                    <a href="{{ .Href }}" class="mr-4 {{ if $.Dark }} text-gray-300 {{ else }} text-gray-500 {{ end }} tracking-wide font-light">{{ .Text }}</a>
+                    {{ end }}
+                </div>
+            {{ end }}
+            </div>
+        </div>
+        {{ end }}
+        <!-- Newsletter section -->
+        {{ if .Newsletter.Enabled }}
+        <form 
+        action="{{ .Newsletter.Action }}"
+        method="{{ .Newsletter.Method }}"
+        class="flex gap-y-4 md:gap-y-0 flex-col md:flex-row py-10 justify-between">
+            <!-- Newsletter section title and text -->
+            <div class="flex flex-col gap-y-4">
+                <div class="uppercase text-gray-400 font-medium text-sm tracking-wider">{{ .Newsletter.Title }}</div>
+                <div class="mr-4 {{ if .Dark }} text-gray-300 {{ else }} text-gray-500 {{ end }} tracking-wide font-light">{{ .Newsletter.Text }}</div>
+            </div>
+            <!-- Newsletter section input -->
+            <div class="flex flex-row gap-x-4 items-center">
+                <div class="w-full h-12 flex rounded-md shadow-sm border border-gray-300">
+                    {{ if .Newsletter.Input.Preffix }}
+                    <div class="px-2 flex-initial flex items-center {{ if .Dark }} text-gray-300 {{ else }} text-gray-500 {{ end }}">{{ .Newsletter.Input.Preffix }}</div>
+                    {{ end }}
+                    <input type="input" placeholder="{{ .Newsletter.Input.Placeholder }}" name="{{ .Newsletter.Input.Name }}" value="{{ .Newsletter.Input.Value }}" class="h-full w-full px-3 py-2 {{ if .Newsletter.Input.Preffix }} border-l rounded-r-md {{ else }} rounded-md {{ end }}">
+                </div>
+                <button type="submit" name="Action" value="{{ .Newsletter.Button.Value }}" class="h-12 flex items-center gap-2 px-4 py-2 border rounded-md shadow-sm text-sm font-medium {{ if .Newsletter.Button.Primary }} text-white border-transparent bg-indigo-600 hover:bg-indigo-700 {{ else }} text-gray-700 border-gray-300 bg-white hover:bg-gray-50 {{ end }} focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+                    {{ .Newsletter.Button.Text }}
+                </button>
+            </div>
+        </form>
+        {{ end }}
+        <!-- Simple section -->
+        {{ if .Simple.Enabled }}
+        <div class="flex py-12 {{ if .Simple.Centered }} flex-col-reverse items-center gap-y-8 {{ else }} flex-col-reverse gap-y-2 sm:flex-row justify-between {{ end }} text-gray-400">
+            <!-- Text e.g. "All rights reserved."-->
+            {{ if ne .Simple.Text "" }}
+            <div class="flex flex-row justify-center font-light {{ if .Dark }} text-gray-300 {{ else }} text-gray-500 {{ end }}">{{ .Simple.Text }}</div>
+            {{ end }}
+            <!-- Socials -->
+            {{ if ne (len .Simple.Socials) 0 }}
+            <div class="flex flex-row space-x-8 text-gray-400 justify-center">
+                {{ range .Simple.Socials }}
+                    <a href="{{ .Href }}">{{ .Icon }}</a>
+                {{ end }}
+            </div>
+            {{ end }}
+            <!-- Links -->
+            {{ if and (ne (len .Simple.Links) 0) (.Simple.Centered) }}
+            <div class="flex flex-wrap {{ if .Dark }} text-gray-300 {{ else }} text-gray-500 {{ end }} font-sans font-light justify-center flex-row gap-x-10">
+                {{ range .Simple.Links }}
+                <a href="{{ .Href }}">{{ .Text }}</a>
+                {{ end }}
+            </div>
+            {{ end }}
+        </div>
+        {{ end }}
+    </div>
+</div>
+{{ end }}
