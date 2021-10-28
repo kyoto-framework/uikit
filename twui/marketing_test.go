@@ -465,12 +465,12 @@ func (p *TestMarketingPage) Init() {
 			Method:  "GET",
 			Title:   "Subscribe to our newsletter",
 			Text:    "The latest news, articles, and resources, sent to your inbox weekly.",
-			Field: MarketingSectionFooterInput{
+			Input: MarketingSectionFooterInput{
 				Name:        "Email",
 				Label:       "Email address",
 				Placeholder: "Enter your email",
 			},
-			Actions: MarketingSectionFooterAction{
+			Button: MarketingSectionFooterAction{
 				Text:    "Subscribe",
 				Value:   "Subscribe",
 				Primary: true,
@@ -599,12 +599,12 @@ func (p *TestMarketingPage) Init() {
 				Method:  "GET",
 				Title:   "Subscribe to our newsletter",
 				Text:    "The latest news, articles, and resources, sent to your inbox weekly.",
-				Field: MarketingSectionFooterInput{
+				Input: MarketingSectionFooterInput{
 					Name:        "Email",
 					Label:       "Email address",
 					Placeholder: "Enter your email",
 				},
-				Actions: MarketingSectionFooterAction{
+				Button: MarketingSectionFooterAction{
 					Text:    "Subscribe",
 					Value:   "Subscribe",
 					Primary: true,
