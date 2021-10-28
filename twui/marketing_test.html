@@ -9,6 +9,17 @@
 </head>
 <body class="bg-gray-50">
     <div class="max-w-screen-xl mx-auto overflow-hidden pb-16">
+        <div class="group">
+            <span> Hello </span>
+            <span class="group-hover:text-red-500">Red</span>
+        </div>
+        <div class="mt-8 text-3xl font-bold py-4">Hero</div>
+        <div class="tracking-wide p-4">With angled image on right</div>
+        {{ template "MarketingSectionHero" .MarketingSectionHero }}
+        <div class="tracking-wide p-4">Simple centered</div>
+        {{ template "MarketingSectionHero" .MarketingSectionHero2 }}
+        <div class="tracking-wide p-4">Split with navbar</div>
+        {{ template "MarketingSectionHero" .MarketingSectionHero3 }}
         <div class="mt-8 text-3xl font-bold py-4">Footer</div>
         <div class="tracking-wide p-4"> 4-column with company mission</div>
         {{ template "MarketingSectionFooter" .MarketingSectionFooter }}
