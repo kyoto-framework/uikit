@@ -110,4 +110,4 @@ Development setup is not ready yet, but feel free to use test files for testing 
 <a target="_blank" href="https://www.buymeacoffee.com/yuriizinets"><img alt="Buy me a Coffee" src="https://github.com/egonelbre/gophers/blob/master/.thumb/animation/buy-morning-coffee-3x.gif?raw=true"></a>
 
 
-Or directly with Bitcoin: `18WY5KRWVKVxjWKFzJLqqALsRrsDh4snqg`
+Or directly with Bitcoin: `bc1qgxe4u799f8pdyzk65sqpq28xj0yc6g05ckhvkk`
