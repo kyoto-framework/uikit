@@ -41,7 +41,8 @@ type AppUINavSidebarLink struct {
 
 type AppUINavSidebarSearch struct {
 	Enabled bool
-	Href    string // value will be passed as ?query={}
+	Action  string // value will be passed as Query
+	Method  string
 }
 
 type AppUINavSidebarProfile struct {
