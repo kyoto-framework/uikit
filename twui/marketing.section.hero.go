@@ -30,7 +30,6 @@ func (c *MarketingSectionHero) Actions(p kyoto.Page) kyoto.ActionMap {
 type MarketingSectionHeroNavbar struct {
 	Enabled bool
 
-	Splitted          bool
 	Centered          bool
 	Logo              template.HTML
 	Links             []MarketingSectionHeroNavbarLink

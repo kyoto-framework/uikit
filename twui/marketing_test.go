@@ -128,8 +128,7 @@ func (p *TestMarketingPage) Init() {
 	})
 	p.MarketingSectionHero3 = kyoto.RegC(p, &MarketingSectionHero{
 		Navbar: MarketingSectionHeroNavbar{
-			Enabled:  true,
-			Splitted: true,
+			Enabled: true,
 			Logo: template.HTML(`<a href="/">
 			<img src="https://raw.githubusercontent.com/yuriizinets/kyoto/master/.web/docs/.vuepress/public/kyoto.svg" class="h-8 w-8 scale-150" />
 		</a>`),
