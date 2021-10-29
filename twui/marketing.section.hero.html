@@ -1,0 +1,143 @@
+{{ define "MarketingSectionHero" }}
+<!-- This example requires Tailwind CSS v2.0+ -->
+<div class="relative overflow-hidden z-10" {{ componentattrs . }}>
+    <div class="max-w-7xl mx-auto">
+      <div class="relative {{ if .Body.Centered }} min-w-full {{ end }} z-10 pb-8 bg-white sm:pb-16 md:pb-20 lg:max-w-2xl lg:w-full lg:pb-28 xl:pb-32" {{ if .BackgroundImage }} style="background-image: url('{{ .BackgroundImage }}');" {{ end }}>
+        {{ if and .Body.Image.Src .Body.Image.Angled }}
+        <svg class="hidden lg:block absolute right-0 inset-y-0 h-full w-64 text-white transform translate-x-1/2" fill="currentColor" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">
+          <polygon points="50,0 100,0 50,100 0,100" />
+        </svg>
+        {{ end }}
+        {{ if .Navbar.Enabled }}
+        <!-- Navbar -->
+        <div>
+          <!-- Desktop navbar -->
+          <div class="relative border-black pt-6 px-4 sm:px-6 lg:px-8">
+            <nav class="relative flex items-center justify-between sm:h-10 {{ if .Navbar.Centered }} lg:justify-between {{ else }} lg:justify-start {{ end }}" aria-label="Global">
+              <div class="flex items-center flex-grow flex-shrink-0 lg:flex-grow-0">
+                <div class="flex items-center justify-between w-full md:w-auto">
+                  <!-- Logo -->
+                  {{ .Navbar.Logo }}
+                  <div class="-mr-2 flex items-center md:hidden">
+                    <button type="button" onclick="{{ action `ToggleMobileMenu` }}" class="bg-white rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500" aria-expanded="false">
+                      <span class="sr-only">Open main menu</span>
+                      <!-- Heroicon name: outline/menu -->
+                      <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                      </svg>
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <!-- Links -->
+              <div class="flex flex-row hidden md:block md:ml-10 md:space-x-8">
+                {{ range .Navbar.Links }}
+                {{ if eq (len .Links) 0 }}
+                <a href="{{ .Href }}" class="font-medium text-gray-500 hover:text-gray-900">{{ .Text }}</a>
+                {{ else }}
+                <span class="-mr-2 relative" onmouseenter="{{ action `ToggleDropdown` .Text }}" onmouseleave="{{ action `ToggleDropdown` }}">
+                    <button class="font-medium text-gray-500 hover:text-gray-900">
+                        <span class="flex flex-row items-center">{{ .Text }} <svg class="pt-1 fill-current h-4 w-4 transition-all"  {{ if eq $.Navbar.InternalOpenedDropdown .Text }} transform="translate(0, 2) rotate(180)" {{ end }} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"/></svg></span>
+                    </button>
+                    <!-- Nested links -->
+                    <div class="flex flex-col space-y-3 border transition-all transform origin-top rounded shadow bg-white p-2 absolute left-0 {{ if eq $.Navbar.InternalOpenedDropdown .Text }} scale-y-100 {{ else }} scale-y-0 {{ end }}">
+                        {{ range .Links }}
+                            <a href="{{ .Href }}" class="font-medium text-gray-500 hover:text-gray-900">{{ .Text }}</a>
+                        {{ end }}
+                    </div>
+                </span>
+                {{ end }}
+                {{ end }}
+              </div>
+              <div class="hidden md:block md:ml-10 md:pr-4 md:space-x-8">
+                {{ range .Navbar.AutorizationLinks }}
+                <a href="{{ .Href }}" class="font-medium text-indigo-600 hover:text-indigo-500">{{ .Text }}</a>
+                {{ end }}
+              </div>
+            </nav>
+          </div>
+  
+          <!--
+            Mobile menu, show/hide based on menu open state.
+          -->
+          <div class="{{ if .Navbar.InternalMobileMenuOpened }} block {{ else }} hidden {{ end }} absolute z-10 top-0 inset-x-0 p-2 transition transform origin-top-right md:hidden">
+            <div class="rounded-lg shadow-md bg-white ring-1 ring-black ring-opacity-5 overflow-hidden">
+              <div class="px-5 pt-4 flex items-center justify-between">
+                <!-- Logo -->
+                <div>
+                    {{ .Navbar.Logo }}
+                </div>
+                <div class="-mr-2">
+                  <button type="button" onclick="{{ action `ToggleMobileMenu` }}" class="bg-white rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500">
+                    <span class="sr-only">Close main menu</span>
+                    <!-- Heroicon name: outline/x -->
+                    <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                    </svg>
+                  </button>
+                </div>
+              </div>
+              <!-- Links -->
+              <div class="px-2 pt-2 pb-3 space-y-1">
+                {{ range .Navbar.Links }}
+                {{ if eq (len .Links ) 0 }}
+                <a href="{{ .Href }}" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50">{{ .Text }}</a>
+                {{ else }}
+                <span>
+                    <button onclick="{{ action `ToggleDropdown` .Text }}" class="w-full block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50">
+                        <span class="flex flex-row items-center">{{ .Text }} <svg class="pt-1 fill-current h-4 w-4 transition-all"  {{ if eq $.Navbar.InternalOpenedDropdown .Text }} transform="translate(0, 2) rotate(180)" {{ end }} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"/></svg></span>
+                    </button>
+                    <!-- Nested links -->
+                    <div class="flex flex-col space-y-3 bg-white p-2 {{ if eq $.Navbar.InternalOpenedDropdown .Text }} block {{ else }} hidden {{ end }}">
+                        {{ range .Links }}
+                            <a href="{{ .Href }}" class="block px-3 py-2 rounded-md text-base font-medium text-gray-500 hover:text-gray-900 hover:bg-gray-50">{{ .Text }}</a>
+                        {{ end }}
+                    </div>
+                </span>
+                {{ end }}
+                {{ end }}
+              </div>
+              {{ range .Navbar.AutorizationLinks }}
+              <a href="{{ .Href }}" class="block w-full px-5 py-3 text-center font-medium text-indigo-600 bg-gray-50 hover:bg-gray-100">
+                {{ .Text }}
+              </a>
+              {{ end }}
+            </div>
+          </div>
+        </div>
+        {{ else }}
+        {{ if eq .Body.Centered false }}
+        <div class="relative pt-6 px-4 sm:px-6 lg:px-8"></div>
+        {{ end }}
+        {{ end }}
+        <!-- Body -->
+        <main class="mt-10 mx-auto max-w-7xl px-4 sm:mt-12 sm:px-6 md:mt-16 lg:mt-20 lg:px-8 xl:mt-28">
+          <div class="sm:text-center {{ if .Body.Centered }} text-center {{ else }} lg:text-left {{ end }}">
+            <h1 class="text-4xl tracking-tight font-extrabold text-gray-900 sm:text-5xl md:text-6xl">
+              <span class="block xl:inline">{{ .Body.Title }}</span>
+              <span class="block text-indigo-600 xl:inline">{{ .Body.Subtitle }}</span>
+            </h1>
+            <p class="mt-3 text-base text-gray-500 sm:mt-5 sm:text-lg sm:max-w-xl sm:mx-auto md:mt-5 md:text-xl {{ if .Body.Centered }} sm:max-w-3xl {{ else }} sm:max-w-xl lg:mx-0 {{ end }}">
+              {{ .Body.Text }}
+            </p>
+            <div class="mt-5 sm:mt-8 sm:flex sm:justify-center space-y-4 sm:space-y-0 sm:space-x-3 {{ if eq .Body.Centered false }} lg:justify-start {{ end }}">
+              {{ range .Body.Actions }}
+              <div class="rounded-md shadow">
+                <a href="{{ .Href }}" class="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md {{ if .Primary }} text-white bg-indigo-600 hover:bg-indigo-700 {{ else }} text-indigo-700 bg-indigo-100 hover:bg-indigo-200 {{ end }} md:py-4 md:text-lg md:px-10">
+                  {{ .Text }}
+                </a>
+              </div>
+              {{ end }}
+            </div>
+          </div>
+        </main>
+      </div>
+    </div>
+    <!-- Body image -->
+    {{ if .Body.Image.Src }}
+    <div class="lg:absolute lg:inset-y-0 lg:right-0 lg:w-1/2">
+      <img class="h-56 w-full object-cover sm:h-72 md:h-96 lg:w-full lg:h-full" src="{{ .Body.Image.Src }}" alt="">
+    </div>
+    {{ end }}
+  </div>
+  {{ end }}

@@ -8,6 +8,9 @@ import (
 )
 
 type TestMarketingPage struct {
+	MarketingSectionHero    kyoto.Component
+	MarketingSectionHero2   kyoto.Component
+	MarketingSectionHero3   kyoto.Component
 	MarketingSectionFooter  kyoto.Component
 	MarketingSectionFooter2 kyoto.Component
 	MarketingSectionFooter3 kyoto.Component
@@ -20,6 +23,200 @@ func (p *TestMarketingPage) Template() *template.Template {
 }
 
 func (p *TestMarketingPage) Init() {
+	p.MarketingSectionHero = kyoto.RegC(p, &MarketingSectionHero{
+		Navbar: MarketingSectionHeroNavbar{
+			Enabled: true,
+			Logo: template.HTML(`<a href="/">
+			<img src="https://raw.githubusercontent.com/yuriizinets/kyoto/master/.web/docs/.vuepress/public/kyoto.svg" class="h-8 w-8 scale-150" />
+		</a>`),
+			Links: []MarketingSectionHeroNavbarLink{
+				{
+					Href: "#",
+					Text: "Product",
+				},
+				{
+					Href: "#",
+					Text: "Features",
+				},
+				{
+					Href: "#",
+					Text: "Marketplace",
+				},
+				{
+					Href: "#",
+					Text: "Company",
+				},
+			},
+			AutorizationLinks: []MarketingSectionHeroNavbarLink{
+				{
+					Href: "#",
+					Text: "Log in",
+				},
+			},
+		},
+		Body: MarketingSectionHeroBody{
+			Image: MarketingSectionHeroBodyImage{
+				Src:    "https://images.unsplash.com/photo-1551434678-e076c223a692?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2850&q=80",
+				Angled: true,
+			},
+			Title:    "Data to enrich your",
+			Subtitle: "online business",
+			Text:     "Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui lorem cupidatat commodo. Elit sunt amet fugiat veniam occaecat fugiat aliqua.",
+			Actions: []MarketingSectionHeroBodyActions{
+				{
+					Text:    "Get started",
+					Href:    "#",
+					Primary: true,
+				},
+				{
+					Text: "Live demo",
+					Href: "#",
+				},
+			},
+		},
+	})
+	p.MarketingSectionHero2 = kyoto.RegC(p, &MarketingSectionHero{
+		BackgroundImage: "https://wallpaperaccess.com/full/1093402.jpg",
+		Navbar: MarketingSectionHeroNavbar{
+			Centered: true,
+			Enabled:  true,
+			Logo: template.HTML(`<a href="/">
+			<img src="https://raw.githubusercontent.com/yuriizinets/kyoto/master/.web/docs/.vuepress/public/kyoto.svg" class="h-12 w-12 scale-150" />
+		</a>`),
+			Links: []MarketingSectionHeroNavbarLink{
+				{
+					Href: "#",
+					Text: "Product",
+				},
+				{
+					Href: "#",
+					Text: "Features",
+				},
+				{
+					Href: "#",
+					Text: "Marketplace",
+				},
+				{
+					Href: "#",
+					Text: "Company",
+				},
+			},
+			AutorizationLinks: []MarketingSectionHeroNavbarLink{
+				{
+					Href: "#",
+					Text: "Log in",
+				},
+			},
+		},
+		Body: MarketingSectionHeroBody{
+			Title:    "Data to enrich your",
+			Subtitle: "online business",
+			Text:     "Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui lorem cupidatat commodo. Elit sunt amet fugiat veniam occaecat fugiat aliqua.",
+			Centered: true,
+			Actions: []MarketingSectionHeroBodyActions{
+				{
+					Text:    "Get started",
+					Href:    "#",
+					Primary: true,
+				},
+				{
+					Text: "Live demo",
+					Href: "#",
+				},
+			},
+		},
+	})
+	p.MarketingSectionHero3 = kyoto.RegC(p, &MarketingSectionHero{
+		Navbar: MarketingSectionHeroNavbar{
+			Enabled: true,
+			Logo: template.HTML(`<a href="/">
+			<img src="https://raw.githubusercontent.com/yuriizinets/kyoto/master/.web/docs/.vuepress/public/kyoto.svg" class="h-8 w-8 scale-150" />
+		</a>`),
+			Links: []MarketingSectionHeroNavbarLink{
+				{
+					Href: "#",
+					Text: "Solutions",
+					Links: []MarketingSectionHeroNavbarLink{
+						{
+							Text: "Marketing",
+							Href: "#",
+						},
+						{
+							Text: "Analytics",
+							Href: "#",
+						},
+						{
+							Text: "Commerce",
+							Href: "#",
+						},
+						{
+							Text: "Insight",
+							Href: "#",
+						},
+					},
+				},
+				{
+					Href: "#",
+					Text: "Pricing",
+				},
+				{
+					Href: "#",
+					Text: "Docs",
+				},
+				{
+					Href: "#",
+					Text: "More",
+					Links: []MarketingSectionHeroNavbarLink{
+						{
+							Text: "About",
+							Href: "#",
+						},
+						{
+							Text: "Blog",
+							Href: "#",
+						},
+						{
+							Text: "Jobs",
+							Href: "#",
+						},
+						{
+							Text: "Press",
+							Href: "#",
+						},
+						{
+							Text: "Partners",
+							Href: "#",
+						},
+					},
+				},
+			},
+			AutorizationLinks: []MarketingSectionHeroNavbarLink{
+				{
+					Href: "#",
+					Text: "Log in",
+				},
+			},
+		},
+		Body: MarketingSectionHeroBody{
+			Image: MarketingSectionHeroBodyImage{
+				Src: "https://images.unsplash.com/photo-1551434678-e076c223a692?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2850&q=80",
+			},
+			Title:    "Data to enrich your",
+			Subtitle: "online business",
+			Text:     "Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui lorem cupidatat commodo. Elit sunt amet fugiat veniam occaecat fugiat aliqua.",
+			Actions: []MarketingSectionHeroBodyActions{
+				{
+					Text:    "Get started",
+					Href:    "#",
+					Primary: true,
+				},
+				{
+					Text: "Live demo",
+					Href: "#",
+				},
+			},
+		},
+	})
 	p.MarketingSectionFooter = kyoto.RegC(p, &MarketingSectionFooter{
 		Main: MarketingSectionFooterMain{
 			Enabled: true,

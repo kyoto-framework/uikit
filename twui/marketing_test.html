@@ -9,16 +9,23 @@
 </head>
 <body class="bg-gray-50">
     <div class="max-w-screen-xl mx-auto overflow-hidden pb-16">
+        <div class="mt-8 text-3xl font-bold py-4">Hero</div>
+        <div class="tracking-wide pb-4">With angled image on right</div>
+        {{ template "MarketingSectionHero" .MarketingSectionHero }}
+        <div class="tracking-wide pt-12 pb-4">Simple centered</div>
+        {{ template "MarketingSectionHero" .MarketingSectionHero2 }}
+        <div class="tracking-wide pt-12 pb-4">Navbar with nested links</div>
+        {{ template "MarketingSectionHero" .MarketingSectionHero3 }}
         <div class="mt-8 text-3xl font-bold py-4">Footer</div>
-        <div class="tracking-wide p-4"> 4-column with company mission</div>
+        <div class="tracking-wide pb-4"> 4-column with company mission</div>
         {{ template "MarketingSectionFooter" .MarketingSectionFooter }}
-        <div class="tracking-wide p-4"> 4-column with newsletter and localization (dark)</div>
+        <div class="tracking-wide pt-12 pb-4"> 4-column with newsletter and localization (dark)</div>
         {{ template "MarketingSectionFooter" .MarketingSectionFooter2 }}
-        <div class="tracking-wide p-4"> 4-column with newsletter</div>
+        <div class="tracking-wide pt-12 pb-4"> 4-column with newsletter</div>
         {{ template "MarketingSectionFooter" .MarketingSectionFooter3 }}
-        <div class="tracking-wide p-4"> Simple centered</div>
+        <div class="tracking-wide pt-12 pb-4"> Simple centered</div>
         {{ template "MarketingSectionFooter" .MarketingSectionFooter4 }}
-        <div class="tracking-wide p-4"> Social links only</div>
+        <div class="tracking-wide pt-12 pb-4"> Social links only</div>
         {{ template "MarketingSectionFooter" .MarketingSectionFooter5 }}
     </div>
     {{ dynamics }}
