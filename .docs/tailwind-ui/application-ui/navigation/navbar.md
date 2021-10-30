@@ -9,7 +9,7 @@ Basic navbar component with set of "extensions", like search, notifications badg
 
 ## Notes
 
-- On search submit, you will be redirected to page provided in `AppUINavNavbarSearch.Href`. Query will be passed as `?query=...`
+No notes
 
 ## Files
 
