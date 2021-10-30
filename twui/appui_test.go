@@ -369,14 +369,6 @@ func (p *TestAppUIPage) Init() {
 			{Text: "Submit", Value: "Submit", Primary: true},
 		},
 	})
-	p.AppUIFormSignIn = kyoto.RegC(p, &AppUIFormSignIn{
-		Logo:          `<img class="w-32 h-32" src="https://raw.githubusercontent.com/yuriizinets/kyoto/master/.web/docs/.vuepress/public/kyoto.svg" />`,
-		ResetPassword: "/",
-		Form: AppUIFormLayout{
-			Action: "/",
-			Method: "POST",
-		},
-	})
 	rows := []map[string]template.HTML{}
 	for i := 0; i < 100; i++ {
 		rows = append(rows, map[string]template.HTML{
