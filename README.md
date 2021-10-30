@@ -18,14 +18,24 @@
 - `kyoto` page
 - configured SSA
 - basic knowledge of `kyoto`
-- (twui) configured tailwindcss
+- (twui only) configured tailwindcss
 
 ## Installation
+
+### Git submodule
+
+The easiest way to install for now, because it handles templates as well
+
+- Add repo as git submodule to your app: `git submodule add git submodule add https://github.com/yuriizinets/kyoto-uikit.git uikit`
+- (twui only) Add replace directive to your `go.mod` file: `github.com/yuriizinets/kyoto-uikit/twui => ./uikit/twui`
+- (twui only) Add twui path to tailwind config file for JIT mode
+
+### Go package + templates
 
 `<kit>` - component library you want to use
 
 - Install Go package into your project with `go get github.com/yuriizinets/kyoto-uikit/<kit>`
-- Copy all `<kit>/*.html` files to your templates directory
+- Manually copy all `<kit>/*.html` files to your templates directory
 
 ## Example
 
