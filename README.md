@@ -26,7 +26,7 @@
 
 The easiest way to install for now, because it handles templates as well
 
-- Add repo as git submodule to your app: `git submodule add git submodule add https://github.com/yuriizinets/kyoto-uikit.git uikit`
+- Add repo as git submodule to your app: `git submodule add https://github.com/yuriizinets/kyoto-uikit.git uikit`
 - (twui only) Add replace directive to your `go.mod` file: `github.com/yuriizinets/kyoto-uikit/twui => ./uikit/twui`
 - (twui only) Add twui path to tailwind config file for JIT mode
 
