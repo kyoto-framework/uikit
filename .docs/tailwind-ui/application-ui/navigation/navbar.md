@@ -7,16 +7,6 @@ Basic navbar component with set of "extensions", like search, notifications badg
 
 ![navbar](/examples/navbar.jpg)
 
-## Arguments
-
-| Argument | Type | Description |
-| -------- | ---- | ----------- |
-| Logo | `template.HTML` | RAW HTML, will be injected as logo |
-| Links |  `[]AppUINavNavbarLink` | List of links |
-| Search |  `AppUINavNavbarSearch` | Interactive search field configuration |
-| Notifications | `AppUINavNavbarNotifications` | Notifications badge configuration |
-| Profile | `AppUINavNavbarProfile` | Profile badge configuration |
-
 ## Notes
 
 - On search submit, you will be redirected to page provided in `AppUINavNavbarSearch.Href`. Query will be passed as `?query=...`
