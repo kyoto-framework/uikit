@@ -9,7 +9,10 @@ import (
 
 func serve(page kyoto.Page) {
 	ssatemplate := func(p kyoto.Page) *template.Template {
-		return template.Must(template.New("SSA").Funcs(kyoto.TFuncMap()).ParseGlob("*.html"))
+		t := template.New("SSA").Funcs(kyoto.TFuncMap())
+		t, _ = t.ParseGlob("*.html")
+		t, _ = t.ParseGlob("*.gohtml")
+		return t
 	}
 	ssahandler := func() http.HandlerFunc {
 		return func(rw http.ResponseWriter, r *http.Request) {

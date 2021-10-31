@@ -1,0 +1,34 @@
+{{- /*gotype: github.com/yuriizinets/kyoto-uikit/twui.AppUIListFeed*/ -}}
+{{ define "AppUIListFeed" }}
+<div>
+    {{ range $index, $entry := .Entries }}
+        <div class="flex">
+            <div class="py-2 w-10 flex items-center justify-center">
+                {{ if $entry.Icon }}
+                    {{ $entry.Icon }}
+                {{ else }}
+                    <div class="w-6 h-6 bg-gray-300"></div>
+                {{ end }}
+            </div>
+            <div class="pl-2 flex-grow flex flex-col justify-center">
+                {{ if $entry.RAW }}
+                    {{ $entry.RAW }}
+                {{ else }}
+                    <div class="font-semibold">{{ $entry.Title }}</div>
+                    <div class="text-sm text-gray-500">{{ $entry.Subtitle }} {{ $entry.Time }}</div>
+                {{ end }}
+            </div>
+        </div>
+        <div class="flex">
+            <div class="w-10 flex items-center justify-center">
+                {{ if ne $index $.InternalLastIndex }}
+                    <div class="h-full w-0.5 bg-gray-300"></div>
+                {{ end }}
+            </div>
+            <div class="pt-2 pb-6 pl-2">
+                {{ $entry.Description }}
+            </div>
+        </div>
+    {{ end }}
+</div>
+{{ end }}
