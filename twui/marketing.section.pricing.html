@@ -1,0 +1,96 @@
+{{ define "MarketingSectionPricing" }}
+<div class="max-w-7xl w-full pb-12 mx-auto bg-white" {{ componentattrs . }}>
+    <div class="w-full flex flex-col justify-center items-center pt-24 pb-14 space-y-6">
+        <div class="font-bold text-5xl tracking-wide text-center sm:text-left">
+            {{ .Title }}
+        </div>
+        <div class="text-gray-500 text-xl tracking-wide font-light md:text-left text-center">
+            {{ .Description }}
+        </div>
+        {{ if gt (len .CardBlock) 1 }}
+        <div class="flex bg-gray-100 rounded-lg items-center p-0.5">
+            {{ range .CardBlock }}
+			<button onclick="{{ action `ToggleTabMenu` .Title }}" class="{{ if eq $.InternalActiveTab .Title }} bg-white text-black {{ else }} text-gray-500 bg-transparent hover:bg-indigo-500 hover:text-gray-100 {{ end }} transition-all tracking-tight py-2 align-middle px-6 rounded-lg text-sm tracking-wide">{{ .Title }}</button>
+            {{ end }}
+        </div>
+        {{ end }}
+    </div>
+    <div class="px-6">
+        {{ range $bindex, $b := .CardBlock }}
+                {{ if eq $.InternalActiveTab .Title }}
+                    {{ if and (gt (len $b.Cards) 1) (not $b.Inline) }}
+                        <div class="w-full grid {{ if eq (len $b.Cards) 1 }} grid-cols-1 {{ else }} {{ if eq (len $b.Cards) 2 }} grid-cols-1 sm:grid-cols-2 {{ else }} grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 {{ end }} {{ end }} gap-4 px-2 lg:px-6">
+                            {{ range .Cards }}
+                            <div class="flex flex-col w-full flex-wrap p-6 border divide-y rounded w-1/4">
+                                <div class="space-y-4 pb-6 tracking-wide">
+                                    <div class="text-lg">{{ .Title }}</div>
+                                    <div class="text-sm text-gray-500 tracking-wide">{{ .Description }}</div>
+                                    <div class="text-4xl font-extrabold py-4">{{ .Price.Currency }}{{ .Price.Value }} <span class="text-sm text-gray-400 font-light">{{ .Price.Suffix }}</span></div>
+                                    <a href="{{ .CTALink.Text }}" class="flex justify-center w-full transition-colors duration-300 bg-gray-800 hover:bg-gray-700 text-white text-sm py-2 rounded-md shadow-sm">{{ .CTALink.Text }}</a>
+                                </div>
+                                <div class="space-y-4 pt-6">
+                                    {{ if $b.FeaturesTitle }}<div class="uppercase text-xs font-medium">{{ $b.FeaturesTitle }}</div> {{ end }}
+                                    {{ range .Features }}
+                                    <div class="text-sm text-gray-400 flex flex-row">
+                                        <svg class="mr-2" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" role="img" style="vertical-align: -0.125em;" width="1.5em" height="1.5em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><path d="M9 16.2L4.8 12l-1.4 1.4L9 19L21 7l-1.4-1.4L9 16.2z" fill="forestgreen"/></svg>
+                                        {{ . }}
+                                    </div>
+                                    {{ end }}
+                                </div>
+                            </div>
+                            {{ end }}
+                        </div>
+                    {{ else }}
+                        <div class="flex flex-col gap-8">
+                        {{ range .Cards}}
+                        <div class="w-full shadow-lg flex flex-col sm:flex-row border rounded-lg">
+                            <div class="flex flex-col w-full sm:w-3/4 p-12">
+                                <div class="space-y-6 pb-8">
+                                    <div class="text-3xl font-bold text-center sm:text-left">{{ .Title }}</div>
+                                    <div class="text-gray-400 tracking-wide">{{ .Description }}</div>
+                                </div>
+                                <div class="flex flex-row">
+                                    {{ if $b.FeaturesTitle }}
+                                    <div class="uppercase text-sm font-medium text-indigo-700 flex-none tracking-wide">
+                                        {{ $b.FeaturesTitle }}
+                                    </div> 
+                                    {{ end }}
+                                    <div class="flex-grow pt-2 pl-4">
+                                        <hr style="height:2px;border-width:0;color:lightgray;background-color:lightgray">
+                                    </div>
+                                </div>
+                                <div class="grid grid-cols-1 md:grid-cols-2 gap-x-6 gap-y-4 pt-8">
+                                    {{ range .Features }}
+                                        <div class="text-gray-500">
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="inline" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" role="img" style="vertical-align: -0.125em;" width="1em" height="1em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><g fill="none" class="w-full"><path fill-rule="evenodd" clip-rule="evenodd" d="M12 1C5.925 1 1 5.925 1 12s4.925 11 11 11s11-4.925 11-11S18.075 1 12 1zm4.768 9.14a1 1 0 1 0-1.536-1.28l-4.3 5.159l-2.225-2.226a1 1 0 0 0-1.414 1.414l3 3a1 1 0 0 0 1.475-.067l5-6z" fill="green"/></g></svg>
+                                            <div class="inline">{{ . }}</div>
+                                        </div>
+                                    {{ end }}
+                                </div>
+                            </div>
+                            <div class="flex justify-center flex-col sm:w-1/4 bg-gray-50 text-center p-10 space-y-4">
+                                <div class="text-lg tracking-wide">
+                                    {{ .PriceTitle }}
+                                </div>
+                                <div class="text-5xl font-extrabold items-center justify-center">{{ .Price.Currency }}{{ .Price.Value }} <span class="text-sm text-gray-400 font-light pl-2">{{ .Price.Suffix }}</span></div>
+                                {{ if .AdditionalInformation }}
+                                <a href="{{ .AdditionalInformation.Href }}" class="underline text-sm tracking-tight text-gray-500 pb-2">
+                                    {{ .AdditionalInformation.Text }}
+                                </a>
+                                {{ end }}
+                                <a href="{{ .CTALink.Text }}" class="w-full transition-colors duration-300 bg-gray-800 hover:bg-gray-700 text-white text-sm py-4 rounded-md shadow-sm">{{ .CTALink.Text }}</a>
+                                {{ if .FreeSample.Enabled }}
+                                <div>
+                                    {{ .FreeSample.Sample }}
+                                </div>
+                                {{ end }}
+                            </div>
+                        </div>
+                        {{ end }}
+                        </div>
+                    {{ end }}
+                {{ end }}
+        {{ end }}
+    </div>
+</div>
+{{ end }}
