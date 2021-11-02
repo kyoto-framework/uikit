@@ -1,0 +1,28 @@
+<!-- This example requires Tailwind CSS v2.0+ -->
+{{ define "MarketingSectionCTA" }}
+<div class="{{ if .Background }} {{ .Background }} {{ else }} bg-gray-50 {{ end }} rounded">
+    <div class="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:py-16 lg:px-8 lg:flex lg:items-center {{ if .CTA }} lg:justify-between {{ else }} lg:justify-center {{ end }}">
+      <div class="text-3xl text-gray-900 sm:text-4xl">
+        <span class="block font-extrabold {{ .Content.Title.Color }} {{ if .Content.Title.Centered }} text-center {{ end }}">{{ .Content.Title.Text }}</span>
+        <span class="block font-extrabold {{ .Content.Subtitle.Color }} {{ if .Content.Subtitle.Centered }} text-center {{ end }}">{{ .Content.Subtitle.Text }}</span>
+        {{ if .Content.Description.Text }}<span class="mt-4 max-w-xl tracking-wide text-lg font-normal block {{ .Content.Description.Color }} {{ if .Content.Description.Centered }} text-center {{ end }}">{{ .Content.Description.Text }}</span>{{ end }}
+        {{ if gt (len .Content.Links) 0 }}
+        <div class="flex {{ if $.Content.LinksCentered }} justify-center {{ end }} space-x-4 mt-8">
+          {{ range .Content.Links }}
+          <div class="inline-flex tracking-normal rounded-md shadow">
+              <a href="{{ .Href }}" class="inline-flex items-center justify-center px-5 py-3 border border-transparent text-base rounded-md {{ if .Primary }} text-white bg-indigo-600 hover:bg-indigo-700 {{ else }} text-indigo-600 bg-white hover:bg-indigo-50 {{ end }}">
+                {{ .Text }}
+              </a>
+          </div>
+          {{ end }}
+        </div>
+        {{ end }}
+      </div>
+      {{ if .CTA}}
+      <div class="mt-8 flex lg:mt-0 lg:flex-shrink-0">
+       {{ .CTA }}
+      </div>
+      {{ end }}
+      </div> 
+  </div>
+  {{ end }}

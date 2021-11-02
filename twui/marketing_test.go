@@ -8,6 +8,7 @@ import (
 )
 
 type TestMarketingPage struct {
+	MarketingSectionCTA     []kyoto.Component
 	MarketingSectionHero    kyoto.Component
 	MarketingSectionHero2   kyoto.Component
 	MarketingSectionHero3   kyoto.Component
@@ -23,6 +24,118 @@ func (p *TestMarketingPage) Template() *template.Template {
 }
 
 func (p *TestMarketingPage) Init() {
+	p.MarketingSectionCTA = append(p.MarketingSectionCTA, &MarketingSectionCTA{
+		Content: MarketingSectionCTAContent{
+			Title: MarketingSectionCTAContentText{
+				Text: "Ready to dive in?",
+			},
+			Subtitle: MarketingSectionCTAContentText{
+				Color: "text-indigo-500",
+				Text:  "Start your free trial today.",
+			},
+		},
+		CTA: template.HTML(`<div class="inline-flex rounded-md shadow">
+								<a href="#" class="inline-flex items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700">
+								Get started
+								</a>
+							</div>
+							<div class="ml-3 inline-flex rounded-md shadow">
+								<a href="#" class="inline-flex items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md text-indigo-600 bg-white hover:bg-indigo-50">
+								Learn more
+								</a>
+							</div>`),
+	})
+	p.MarketingSectionCTA = append(p.MarketingSectionCTA, &MarketingSectionCTA{
+		Background: "bg-indigo-700",
+		Content: MarketingSectionCTAContent{
+			Title: MarketingSectionCTAContentText{
+				Text:     "Boost your productivity.",
+				Color:    "text-white",
+				Centered: true,
+			},
+			Subtitle: MarketingSectionCTAContentText{
+				Text:     "Start using TWUI today.",
+				Color:    "text-white",
+				Centered: true,
+			},
+			Description: MarketingSectionCTAContentText{
+				Text:     "Ac eusismod vel sit maecenas id pellentesque eu sed consectecur. Malesuada adipiscing sagittis vel nulla nec.",
+				Color:    "text-gray-300",
+				Centered: true,
+			},
+			LinksCentered: true,
+			Links: []MarketingSectionCTAContentLink{
+				{
+					Text: "Sign up for free",
+					Href: "/",
+				},
+			},
+		},
+	})
+	p.MarketingSectionCTA = append(p.MarketingSectionCTA, &MarketingSectionCTA{
+		Content: MarketingSectionCTAContent{
+			Title: MarketingSectionCTAContentText{
+				Text:     "Ready to dive in?",
+				Centered: true,
+			},
+			Subtitle: MarketingSectionCTAContentText{
+				Text:     "Start your free trial today.",
+				Centered: true,
+			},
+			LinksCentered: true,
+			Links: []MarketingSectionCTAContentLink{
+				{
+					Text:    "Get started",
+					Primary: true,
+					Href:    "/",
+				},
+				{
+					Text: "Learn more",
+					Href: "/",
+				},
+			},
+		},
+	})
+	p.MarketingSectionCTA = append(p.MarketingSectionCTA, &MarketingSectionCTA{
+		Background: "bg-indigo-50",
+		Content: MarketingSectionCTAContent{
+			Title: MarketingSectionCTAContentText{
+				Text: "Ready to dive in?",
+			},
+			Subtitle: MarketingSectionCTAContentText{
+				Color: "text-indigo-500",
+				Text:  "Start your free trial today.",
+			},
+		},
+		CTA: template.HTML(`<div class="inline-flex rounded-md shadow">
+								<a href="#" class="inline-flex items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700">
+								Get started
+								</a>
+							</div>`),
+	})
+	p.MarketingSectionCTA = append(p.MarketingSectionCTA, &MarketingSectionCTA{
+		Content: MarketingSectionCTAContent{
+			Title: MarketingSectionCTAContentText{
+				Text: "Ready to dive in?",
+			},
+			Subtitle: MarketingSectionCTAContentText{
+				Text:  "Start your free trial today.",
+				Color: "text-indigo-500",
+			},
+			Links: []MarketingSectionCTAContentLink{
+				{
+					Text:    "Get started",
+					Primary: true,
+					Href:    "/",
+				},
+				{
+					Text: "Learn more",
+					Href: "/",
+				},
+			},
+		},
+		CTA: template.HTML("<div></div>"),
+	})
 	p.MarketingSectionHero = kyoto.RegC(p, &MarketingSectionHero{
 		Navbar: MarketingSectionHeroNavbar{
 			Enabled: true,
