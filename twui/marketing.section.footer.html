@@ -59,7 +59,7 @@
                         {{ end }}
                         <input type="input" placeholder="{{ .Main.Newsletter.Input.Placeholder }}" name="{{ .Main.Newsletter.Input.Name }}" value="{{ .Main.Newsletter.Input.Value }}" class="h-full w-full px-3 py-2 {{ if .Main.Newsletter.Input.Preffix }} border-l rounded-r-md {{ else }} rounded-md {{ end }}">
                     </div>
-                    <button type="submit" name="Action" value="{{ .Main.Newsletter.Button.Value }}" class="h-12 flex items-center gap-2 px-4 py-2 border rounded-md shadow-sm text-sm font-medium {{ if .Main.Newsletter.Button.Primary }} text-white border-transparent bg-indigo-600 hover:bg-indigo-700 {{ else }} text-gray-700 border-gray-300 bg-white hover:bg-gray-50 {{ end }} focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+                    <button type="submit" name="BtnAction" value="{{ .Main.Newsletter.Button.Value }}" class="h-12 flex items-center gap-2 px-4 py-2 border rounded-md shadow-sm text-sm font-medium {{ if .Main.Newsletter.Button.Primary }} text-white border-transparent bg-indigo-600 hover:bg-indigo-700 {{ else }} text-gray-700 border-gray-300 bg-white hover:bg-gray-50 {{ end }} focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
                         {{ .Main.Newsletter.Button.Text }}
                     </button>
                 </form>
@@ -99,7 +99,7 @@
                     {{ end }}
                     <input type="input" placeholder="{{ .Newsletter.Input.Placeholder }}" name="{{ .Newsletter.Input.Name }}" value="{{ .Newsletter.Input.Value }}" class="h-full w-full px-3 py-2 {{ if .Newsletter.Input.Preffix }} border-l rounded-r-md {{ else }} rounded-md {{ end }}">
                 </div>
-                <button type="submit" name="Action" value="{{ .Newsletter.Button.Value }}" class="h-12 flex items-center gap-2 px-4 py-2 border rounded-md shadow-sm text-sm font-medium {{ if .Newsletter.Button.Primary }} text-white border-transparent bg-indigo-600 hover:bg-indigo-700 {{ else }} text-gray-700 border-gray-300 bg-white hover:bg-gray-50 {{ end }} focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+                <button type="submit" name="BtnAction" value="{{ .Newsletter.Button.Value }}" class="h-12 flex items-center gap-2 px-4 py-2 border rounded-md shadow-sm text-sm font-medium {{ if .Newsletter.Button.Primary }} text-white border-transparent bg-indigo-600 hover:bg-indigo-700 {{ else }} text-gray-700 border-gray-300 bg-white hover:bg-gray-50 {{ end }} focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
                     {{ .Newsletter.Button.Text }}
                 </button>
             </div>

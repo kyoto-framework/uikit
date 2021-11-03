@@ -27,7 +27,7 @@ func (p *TestMarketingPage) Init() {
 		Navbar: MarketingSectionHeroNavbar{
 			Enabled: true,
 			Logo: template.HTML(`<a href="/">
-			<img src="https://raw.githubusercontent.com/yuriizinets/kyoto/master/.web/docs/.vuepress/public/kyoto.svg" class="h-8 w-8 scale-150" />
+			<img src="https://raw.githubusercontent.com/yuriizinets/kyoto/master/.docs/.vuepress/public/kyoto.svg" class="h-8 w-8 scale-150" />
 		</a>`),
 			Links: []MarketingSectionHeroNavbarLink{
 				{
@@ -81,7 +81,7 @@ func (p *TestMarketingPage) Init() {
 			Centered: true,
 			Enabled:  true,
 			Logo: template.HTML(`<a href="/">
-			<img src="https://raw.githubusercontent.com/yuriizinets/kyoto/master/.web/docs/.vuepress/public/kyoto.svg" class="h-12 w-12 scale-150" />
+			<img src="https://raw.githubusercontent.com/yuriizinets/kyoto/master/.docs/.vuepress/public/kyoto.svg" class="h-12 w-12 scale-150" />
 		</a>`),
 			Links: []MarketingSectionHeroNavbarLink{
 				{
@@ -130,7 +130,7 @@ func (p *TestMarketingPage) Init() {
 		Navbar: MarketingSectionHeroNavbar{
 			Enabled: true,
 			Logo: template.HTML(`<a href="/">
-			<img src="https://raw.githubusercontent.com/yuriizinets/kyoto/master/.web/docs/.vuepress/public/kyoto.svg" class="h-8 w-8 scale-150" />
+			<img src="https://raw.githubusercontent.com/yuriizinets/kyoto/master/.docs/.vuepress/public/kyoto.svg" class="h-8 w-8 scale-150" />
 		</a>`),
 			Links: []MarketingSectionHeroNavbarLink{
 				{
