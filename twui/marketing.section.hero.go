@@ -63,5 +63,6 @@ type MarketingSectionHeroBodyActions struct {
 
 type MarketingSectionHeroBodyImage struct {
 	Src    string
+	Cover  bool
 	Angled bool
 }
