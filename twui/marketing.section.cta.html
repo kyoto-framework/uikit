@@ -1,0 +1,44 @@
+<!-- This example requires Tailwind CSS v2.0+ -->
+{{ define "MarketingSectionCTA" }}
+<div class="{{ if .Background }} {{ .Background }} {{ else }} bg-gray-50 {{ end }} rounded">
+    <div class="max-w-7xl mx-auto {{ if .Image }} pl-4 sm:pl-6 lg:pl-16 pt-12 lg:pt-16 {{ else }} lg:py-16 py-12 px-4 sm:px-6 lg:px-8 {{ end }} lg:flex flex-row lg:items-center {{ if .Content.Centered }} lg:justify-center {{ else }} lg:justify-between {{ end }}">
+      <div class="flex flex-col text-3xl text-gray-900 sm:text-4xl">
+        <span class="block font-extrabold {{ .Content.Title.Color }} {{ if .Content.Title.Centered }} text-center {{ end }}">{{ .Content.Title.Text }}</span>
+        <span class="block font-extrabold {{ .Content.Subtitle.Color }} {{ if .Content.Subtitle.Centered }} text-center {{ end }}">{{ .Content.Subtitle.Text }}</span>
+        {{ if .Content.Description.Text }}
+        <div class="flex {{ if .Content.Description.Centered }} justify-center {{ end }}">
+          <div class="mt-4 max-w-xl tracking-wide text-lg font-normal block {{ .Content.Description.Color }} {{ if .Content.Description.Centered }} text-center {{ end }}">
+            {{ .Content.Description.Text }}
+          </div>
+        </div>
+        {{ end }}
+        {{ if gt (len .Content.Links) 0 }}
+        <div class="flex {{ if $.Content.LinksCentered }} justify-center {{ end }} space-x-4 mt-8">
+          {{ range .Content.Links }}
+          <div class="inline-flex tracking-normal rounded-md shadow">
+              <a href="{{ .Href }}" class="inline-flex items-center justify-center px-5 py-3 border border-transparent text-base rounded-md {{ if .Primary }} text-white bg-indigo-600 hover:bg-indigo-700 {{ else }} text-indigo-600 bg-white hover:bg-indigo-50 {{ end }}">
+                {{ .Text }}
+              </a>
+          </div>
+          {{ end }}
+        </div>
+        {{ end }}
+      </div>
+      <div class="mt-8 flex lg:mt-0 lg:flex-shrink-0 {{ if .Image }} lg:w-1/2 {{ end }}">
+        {{ if .Image}}
+        <img class="rounded-tl flex flex-shrink-0" src="{{ .Image }}">
+        {{ else if (gt (len .Links) 0) }}
+        <div class="space-x-4">
+          {{ range .Links }}
+          <div class="inline-flex tracking-normal rounded-md shadow">
+            <a href="{{ .Href }}" class="inline-flex items-center justify-center px-5 py-3 border border-transparent text-base rounded-md {{ if .Primary }} text-white bg-indigo-600 hover:bg-indigo-700 {{ else }} text-indigo-600 bg-white hover:bg-indigo-50 {{ end }}">
+              {{ .Text }}
+            </a>
+          </div>
+          {{ end }}
+        </div>
+        {{ end }}
+      </div>
+    </div> 
+</div>
+{{ end }}

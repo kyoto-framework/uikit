@@ -9,6 +9,14 @@
 </head>
 <body class="bg-gray-50">
     <div class="max-w-screen-xl mx-auto overflow-hidden pb-16">
+        <div class="mt-8 text-3xl font-bold py-4">Marketing > Section > CTA</div>
+        <div class="py-8 w-full flex flex-col">
+            {{ range .MarketingSectionCTA }}
+            <div class="border rounded-lg mb-8">
+                {{ template "MarketingSectionCTA" . }}
+            </div>
+            {{ end }}
+        </div>
         <div class="mt-8 text-3xl font-bold py-4">Hero</div>
         <div class="tracking-wide pb-4">With angled image on right</div>
         {{ template "MarketingSectionHero" .MarketingSectionHero }}
