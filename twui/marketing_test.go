@@ -9,6 +9,7 @@ import (
 
 type TestMarketingPage struct {
 	MarketingSectionPricing []kyoto.Component
+	MarketingSectionCTA     []kyoto.Component
 	MarketingSectionHero    kyoto.Component
 	MarketingSectionHero2   kyoto.Component
 	MarketingSectionHero3   kyoto.Component
@@ -200,11 +201,150 @@ func (p *TestMarketingPage) Init() {
 			},
 		},
 	}))
+	p.MarketingSectionCTA = append(p.MarketingSectionCTA, &MarketingSectionCTA{
+		Content: MarketingSectionCTAContent{
+			Title: MarketingSectionCTAContentText{
+				Text: "Ready to dive in?",
+			},
+			Subtitle: MarketingSectionCTAContentText{
+				Color: "text-indigo-500",
+				Text:  "Start your free trial today.",
+			},
+		},
+		Links: []MarketingSectionCTALink{
+			{
+				Text:    "Get started",
+				Primary: true,
+				Href:    "/",
+			},
+			{
+				Text: "Learn more",
+				Href: "/",
+			},
+		},
+	})
+	p.MarketingSectionCTA = append(p.MarketingSectionCTA, &MarketingSectionCTA{
+		Background: "bg-indigo-700",
+		Content: MarketingSectionCTAContent{
+			Centered: true,
+			Title: MarketingSectionCTAContentText{
+				Text:     "Boost your productivity.",
+				Color:    "text-white",
+				Centered: true,
+			},
+			Subtitle: MarketingSectionCTAContentText{
+				Text:     "Start using TWUI today.",
+				Color:    "text-white",
+				Centered: true,
+			},
+			Description: MarketingSectionCTAContentText{
+				Text:     "Ac eusismod vel sit maecenas id pellentesque eu sed consectecur. Malesuada adipiscing sagittis vel nulla nec.",
+				Color:    "text-gray-300",
+				Centered: true,
+			},
+			LinksCentered: true,
+			Links: []MarketingSectionCTALink{
+				{
+					Text: "Sign up for free",
+					Href: "/",
+				},
+			},
+		},
+	})
+	p.MarketingSectionCTA = append(p.MarketingSectionCTA, &MarketingSectionCTA{
+		Content: MarketingSectionCTAContent{
+			Centered: true,
+			Title: MarketingSectionCTAContentText{
+				Text:     "Ready to dive in?",
+				Centered: true,
+			},
+			Subtitle: MarketingSectionCTAContentText{
+				Text:     "Start your free trial today.",
+				Centered: true,
+			},
+			LinksCentered: true,
+			Links: []MarketingSectionCTALink{
+				{
+					Text:    "Get started",
+					Primary: true,
+					Href:    "/",
+				},
+				{
+					Text: "Learn more",
+					Href: "/",
+				},
+			},
+		},
+	})
+	p.MarketingSectionCTA = append(p.MarketingSectionCTA, &MarketingSectionCTA{
+		Background: "bg-indigo-50",
+		Content: MarketingSectionCTAContent{
+			Title: MarketingSectionCTAContentText{
+				Text: "Ready to dive in?",
+			},
+			Subtitle: MarketingSectionCTAContentText{
+				Color: "text-indigo-500",
+				Text:  "Start your free trial today.",
+			},
+		},
+		Links: []MarketingSectionCTALink{
+			{
+				Text: "Get started",
+				Href: "/",
+			},
+		},
+	})
+	p.MarketingSectionCTA = append(p.MarketingSectionCTA, &MarketingSectionCTA{
+		Content: MarketingSectionCTAContent{
+			Title: MarketingSectionCTAContentText{
+				Text: "Ready to dive in?",
+			},
+			Subtitle: MarketingSectionCTAContentText{
+				Text:  "Start your free trial today.",
+				Color: "text-indigo-500",
+			},
+			Links: []MarketingSectionCTALink{
+				{
+					Text:    "Get started",
+					Primary: true,
+					Href:    "/",
+				},
+				{
+					Text: "Learn more",
+					Href: "/",
+				},
+			},
+		},
+	})
+	p.MarketingSectionCTA = append(p.MarketingSectionCTA, &MarketingSectionCTA{
+		Background: "bg-indigo-700",
+		Content: MarketingSectionCTAContent{
+			Title: MarketingSectionCTAContentText{
+				Text:  "Ready to dive in?",
+				Color: "text-white",
+			},
+			Subtitle: MarketingSectionCTAContentText{
+				Text:  "Start your free trial today.",
+				Color: "text-white",
+			},
+			Description: MarketingSectionCTAContentText{
+				Text:  "Ac eusismod vel sit maecenas id pellentesque eu sed consectecur. Malesuada adipiscing sagittis vel nulla nec.",
+				Color: "text-gray-300",
+			},
+			Links: []MarketingSectionCTALink{
+				{
+					Text: "Sign up for free",
+					Href: "/",
+				},
+			},
+		},
+		Image: "https://images.unsplash.com/photo-1551434678-e076c223a692?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2850&q=80",
+	})
 	p.MarketingSectionHero = kyoto.RegC(p, &MarketingSectionHero{
 		Navbar: MarketingSectionHeroNavbar{
 			Enabled: true,
 			Logo: template.HTML(`<a href="/">
-			<img src="https://raw.githubusercontent.com/yuriizinets/kyoto/master/.web/docs/.vuepress/public/kyoto.svg" class="h-8 w-8 scale-150" />
+			<img src="https://raw.githubusercontent.com/yuriizinets/kyoto/master/.docs/.vuepress/public/kyoto.svg" class="h-8 w-8 scale-150" />
 		</a>`),
 			Links: []MarketingSectionHeroNavbarLink{
 				{
@@ -234,6 +374,7 @@ func (p *TestMarketingPage) Init() {
 		Body: MarketingSectionHeroBody{
 			Image: MarketingSectionHeroBodyImage{
 				Src:    "https://images.unsplash.com/photo-1551434678-e076c223a692?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2850&q=80",
+				Cover:  true,
 				Angled: true,
 			},
 			Title:    "Data to enrich your",
@@ -258,7 +399,7 @@ func (p *TestMarketingPage) Init() {
 			Centered: true,
 			Enabled:  true,
 			Logo: template.HTML(`<a href="/">
-			<img src="https://raw.githubusercontent.com/yuriizinets/kyoto/master/.web/docs/.vuepress/public/kyoto.svg" class="h-12 w-12 scale-150" />
+			<img src="https://raw.githubusercontent.com/yuriizinets/kyoto/master/.docs/.vuepress/public/kyoto.svg" class="h-12 w-12 scale-150" />
 		</a>`),
 			Links: []MarketingSectionHeroNavbarLink{
 				{
@@ -307,7 +448,7 @@ func (p *TestMarketingPage) Init() {
 		Navbar: MarketingSectionHeroNavbar{
 			Enabled: true,
 			Logo: template.HTML(`<a href="/">
-			<img src="https://raw.githubusercontent.com/yuriizinets/kyoto/master/.web/docs/.vuepress/public/kyoto.svg" class="h-8 w-8 scale-150" />
+			<img src="https://raw.githubusercontent.com/yuriizinets/kyoto/master/.docs/.vuepress/public/kyoto.svg" class="h-8 w-8 scale-150" />
 		</a>`),
 			Links: []MarketingSectionHeroNavbarLink{
 				{
@@ -376,7 +517,8 @@ func (p *TestMarketingPage) Init() {
 		},
 		Body: MarketingSectionHeroBody{
 			Image: MarketingSectionHeroBodyImage{
-				Src: "https://images.unsplash.com/photo-1551434678-e076c223a692?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2850&q=80",
+				Src:   "https://images.unsplash.com/photo-1551434678-e076c223a692?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2850&q=80",
+				Cover: true,
 			},
 			Title:    "Data to enrich your",
 			Subtitle: "online business",
