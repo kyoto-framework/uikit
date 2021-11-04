@@ -1,19 +1,19 @@
 package twui
 
-import "html/template"
-
 type MarketingSectionCTA struct {
 	Background string
 	Content    MarketingSectionCTAContent
-	CTA        template.HTML
+	Image      string // src
+	Links      []MarketingSectionCTALink
 }
 
 type MarketingSectionCTAContent struct {
 	Title         MarketingSectionCTAContentText
 	Subtitle      MarketingSectionCTAContentText
 	Description   MarketingSectionCTAContentText
+	Centered      bool
 	LinksCentered bool
-	Links         []MarketingSectionCTAContentLink
+	Links         []MarketingSectionCTALink
 }
 
 type MarketingSectionCTAContentText struct {
@@ -22,7 +22,7 @@ type MarketingSectionCTAContentText struct {
 	Color    string
 }
 
-type MarketingSectionCTAContentLink struct {
+type MarketingSectionCTALink struct {
 	Href    string
 	Primary bool
 	Text    string
