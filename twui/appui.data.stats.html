@@ -1,5 +1,5 @@
 {{ define "AppUIDataStats" }}
-<div {{ componentattrs . }} class="flex {{ if .Wrap }} flex-wrap {{ else }} pb-2 overflow-x-auto {{ end }} gap-4">
+<div {{ componentattrs . }} class="pl-1 -ml-1 flex {{ if .Wrap }} flex-wrap {{ else }} pb-2 overflow-x-auto {{ end }} gap-4">
   {{ range .Items }}
   <div class="p-4 flex items-center gap-4 rounded-lg bg-white shadow-md">
     <!-- Image -->
