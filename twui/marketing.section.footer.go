@@ -6,7 +6,7 @@ type MarketingSectionFooter struct {
 	Dark       bool
 	Simple     MarketingSectionFooterSimple
 	Main       MarketingSectionFooterMain
-	Newsletter MarketingSecionsFooterNewsletter
+	Newsletter MarketingSectionFooterNewsletter
 }
 
 type MarketingSectionFooterMain struct {
@@ -15,11 +15,11 @@ type MarketingSectionFooterMain struct {
 	Blocks       []MarketingSectionFooterMainBlock
 	Company      MarketingSectionFooterMainCompany
 	Localization MarketingSectionFooterMainLocalization
-	Newsletter   MarketingSecionsFooterNewsletter
+	Newsletter   MarketingSectionFooterNewsletter
 	Reverse      bool
 }
 
-type MarketingSecionsFooterNewsletter struct {
+type MarketingSectionFooterNewsletter struct {
 	Enabled bool
 
 	Action string
