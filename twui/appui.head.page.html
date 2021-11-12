@@ -14,10 +14,12 @@
     <!-- General block -->
     <div class="flex-grow">
       <!-- Breadcrumbs -->
-      {{ if .Breadcrumbs.Links }}
-        <div class="{{ if .Banner }} py-2 {{ else }} pb-2 {{ end }}">
-          {{ template "AppUINavBreadcrumbs" .Breadcrumbs }}
-        </div>
+      {{ if .Breadcrumbs }}
+        {{ if .Breadcrumbs.Links }}
+          <div class="{{ if .Banner }} py-2 {{ else }} pb-2 {{ end }}">
+            {{ template "AppUINavBreadcrumbs" .Breadcrumbs }}
+          </div>
+        {{ end }}
       {{ end }}
       <!-- Title + Subtitle + Actions -->
       <div class="flex flex-wrap justify-between">
