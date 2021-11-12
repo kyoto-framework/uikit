@@ -20,6 +20,9 @@
     <!-- Links -->
     <div class="px-2 flex flex-col">
       {{ range .Links }}
+        {{ if .Separator }}
+        <hr class="mt-1 pb-1 border-gray-500">
+        {{ else }}
         <a href="{{ .Href }}" class="relative text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-3 rounded-md text-sm font-medium flex items-center">
           {{ if $.InternalIconsUsed }}
             <div class="w-6 h-6 mr-2">
@@ -33,6 +36,7 @@
           </div>
           {{ end }}
         </a>
+        {{ end }}
       {{ end }}
     </div>
   </div>
