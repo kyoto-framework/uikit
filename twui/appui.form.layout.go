@@ -16,6 +16,8 @@ type AppUIFormLayout struct {
 	Method   string
 	Sections []AppUIFormLayoutSection
 	Actions  []AppUIFormLayoutAction
+
+	ErrorMessage string
 }
 
 type AppUIFormLayoutSection struct {
