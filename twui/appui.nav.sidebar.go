@@ -52,4 +52,11 @@ type AppUINavSidebarProfile struct {
 	Href     string
 	Username string
 	Text     string
+	Signout  AppUINavSidebarProfileSignout
+}
+
+type AppUINavSidebarProfileSignout struct {
+	Enabled bool
+	Text    string
+	Href    string
 }
