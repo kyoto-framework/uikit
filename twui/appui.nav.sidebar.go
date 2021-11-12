@@ -33,10 +33,11 @@ func (c *AppUINavSidebar) Actions() kyoto.ActionMap {
 }
 
 type AppUINavSidebarLink struct {
-	Icon    template.HTML
-	Text    string
-	Href    string
-	Counter int
+	Separator bool
+	Icon      template.HTML
+	Text      string
+	Href      string
+	Counter   int
 }
 
 type AppUINavSidebarSearch struct {
