@@ -9,6 +9,12 @@
 </head>
 <body class="bg-gray-50">
     <div class="max-w-screen-xl mx-auto overflow-hidden pb-16">
+        <div class="mt-8 text-3xl font-bold py-4">Marketing - Sections - Pricing</div>
+        <div class="py-8 w-full flex flex-col gap-16">
+            {{ range .MarketingSectionPricing }}
+            {{ template "MarketingSectionPricing" . }}
+            {{ end }}
+        </div>
         <div class="mt-8 text-3xl font-bold py-4">Marketing > Section > CTA</div>
         <div class="py-8 w-full flex flex-col">
             {{ range .MarketingSectionCTA }}
