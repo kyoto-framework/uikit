@@ -600,7 +600,7 @@ func (p *TestMarketingPage) Init() {
 				},
 			},
 		},
-		Newsletter: MarketingSecionsFooterNewsletter{
+		Newsletter: MarketingSectionFooterNewsletter{
 			Enabled: true,
 			Action:  "/",
 			Method:  "GET",
@@ -734,7 +734,7 @@ func (p *TestMarketingPage) Init() {
 					},
 				},
 			},
-			Newsletter: MarketingSecionsFooterNewsletter{
+			Newsletter: MarketingSectionFooterNewsletter{
 				Enabled: true,
 				Action:  "/",
 				Method:  "GET",
