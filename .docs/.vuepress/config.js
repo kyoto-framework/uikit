@@ -86,6 +86,10 @@ module.exports = {
                                     text: '· Table',
                                     link: '/tailwind-ui/application-ui/list/table'
                                 },
+                                {
+                                    text: '· Feed',
+                                    link: '/tailwind-ui/application-ui/list/feed'
+                                },
                             ]
                         },
                         {
