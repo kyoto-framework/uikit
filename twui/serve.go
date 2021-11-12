@@ -9,9 +9,12 @@ import (
 
 func serve(page kyoto.Page) {
 	ssatemplate := func(p kyoto.Page) *template.Template {
+		var err error
 		t := template.New("SSA").Funcs(kyoto.TFuncMap())
-		t, _ = t.ParseGlob("*.html")
-		t, _ = t.ParseGlob("*.gohtml")
+		t, err = t.ParseGlob("*.html")
+		if err != nil {
+			panic(err)
+		}
 		return t
 	}
 	ssahandler := func() http.HandlerFunc {
