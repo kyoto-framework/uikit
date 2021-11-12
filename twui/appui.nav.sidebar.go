@@ -47,16 +47,10 @@ type AppUINavSidebarSearch struct {
 }
 
 type AppUINavSidebarProfile struct {
-	Enabled  bool
-	Avatar   template.HTML
-	Href     string
-	Username string
-	Text     string
-	Signout  AppUINavSidebarProfileSignout
-}
-
-type AppUINavSidebarProfileSignout struct {
-	Enabled bool
-	Text    string
-	Href    string
+	Enabled     bool
+	Avatar      template.HTML
+	Href        string
+	Username    string
+	Text        string
+	SignoutHref string
 }
