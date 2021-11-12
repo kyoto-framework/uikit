@@ -2,10 +2,10 @@
 <div class="w-full h-full rounded-lg overflow-y-auto shadow-md bg-gray-200">
   <table class="w-full table-auto whitespace-no-wrap">
     <thead>
-      <tr class="text-left sticky top-0">
-        {{ range .Columns }}
-          <th class="py-4 px-4 border-b border-gray-200 text-gray-600 font-bold whitespace-nowrap tracking-wider uppercase text-xs">
-            {{ .Label }}
+      <tr class="text-left sticky top-0 bg-gray-200">
+        {{ range $i, $col := .Columns }}
+          <th class="py-4 px-4 border-b border-gray-200 text-gray-600 font-bold whitespace-nowrap tracking-wider uppercase text-xs {{ if or (eq $i 0) }} rounded-tl-lg {{ end }}">
+            {{ $col.Label }}
           </th>
         {{ end }}
       </tr>
