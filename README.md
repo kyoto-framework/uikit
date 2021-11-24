@@ -1,6 +1,6 @@
 
 <p align="center">
-    <img src="https://raw.githubusercontent.com/yuriizinets/kyoto-uikit/master/.docs/.vuepress/public/avatar.svg" />
+    <img src="https://raw.githubusercontent.com/kyoto-framework/uikit/master/.docs/.vuepress/public/avatar.svg" />
 </p>
 
 <h1 align="center">kyoto uikit</h1>
@@ -8,9 +8,9 @@
     UIKit for rapid development
 </p>
 
-![License](https://img.shields.io/github/license/yuriizinets/kyoto-uikit)
-[![Go Reference](https://pkg.go.dev/badge/github.com/yuriizinets/kyoto.svg)](https://pkg.go.dev/github.com/yuriizinets/kyoto)
-[![Go Report Card](https://goreportcard.com/badge/github.com/yuriizinets/kyoto-uikit)](https://goreportcard.com/report/github.com/yuriizinets/kyoto-uikit)
+![License](https://img.shields.io/github/license/kyoto-framework/uikit)
+[![Go Reference](https://pkg.go.dev/badge/github.com/kyoto-framework/uikit.svg)](https://pkg.go.dev/github.com/kyoto-framework/kyoto)
+[![Go Report Card](https://goreportcard.com/badge/github.com/kyoto-framework/uikit)](https://goreportcard.com/report/github.com/kyoto-framework/uikit)
 
 
 ## Requirements
@@ -26,15 +26,15 @@
 
 The easiest way to install for now, because it handles templates as well
 
-- Add repo as git submodule to your app: `git submodule add https://github.com/yuriizinets/kyoto-uikit.git uikit`
-- (twui only) Add replace directive to your `go.mod` file: `github.com/yuriizinets/kyoto-uikit/twui => ./uikit/twui`
+- Add repo as git submodule to your app: `git submodule add https://github.com/kyoto-framework/uikit.git uikit`
+- (twui only) Add replace directive to your `go.mod` file: `github.com/kyoto-framework/uikit/twui => ./uikit/twui`
 - (twui only) Add twui path to tailwind config file for JIT mode
 
 ### Go package + templates
 
 `<kit>` - component library you want to use
 
-- Install Go package into your project with `go get github.com/yuriizinets/kyoto-uikit/<kit>`
+- Install Go package into your project with `go get github.com/kyoto-framework/uikit/<kit>`
 - Manually copy all `<kit>/*.html` files to your templates directory
 
 ## Example
@@ -47,8 +47,8 @@ Simple example using tailwind ui stats component
 package main
 
 import (
-    "github.com/yuriizinets/kyoto"
-    "github.com/yuriizinets/kyoto-uikit/twui"
+    "github.com/kyoto-framework/kyoto"
+    "github.com/kyoto-framework/uikit/twui"
 )
 
 
@@ -106,8 +106,8 @@ We are working on this
 
 ## References
 
-- `kyoto-uikit` project: https://github.com/yuriizinets/kyoto-uikit
-- `kyoto` project: https://github.com/yuriizinets/kyoto 
+- `uikit` project: https://github.com/kyoto-framework/uikit
+- `kyoto` project: https://github.com/kyoto-framework/kyoto 
 - Documentation: not ready yet 🤷‍♂️  
 - Demo project: not ready yet 🤷‍♂️
 

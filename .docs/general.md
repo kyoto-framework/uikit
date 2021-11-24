@@ -15,7 +15,7 @@ next: /tailwind-ui/
 
 `<kit>` - component library you want to use
 
-- Install Go package into your project with `go get github.com/yuriizinets/kyoto-uikit/<kit>`
+- Install Go package into your project with `go get github.com/kyoto-framework/uikit/<kit>`
 - Copy all `<kit>/*.html` files to your templates directory
 
 ## Contribution

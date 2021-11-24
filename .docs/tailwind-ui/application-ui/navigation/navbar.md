@@ -13,8 +13,8 @@ No notes
 
 ## Files
 
-- [appui.nav.navbar.go](https://github.com/yuriizinets/kyoto-uikit/blob/master/twui/appui.nav.navbar.go)
-- [appui.nav.navbar.html](https://github.com/yuriizinets/kyoto-uikit/blob/master/twui/appui.nav.navbar.html)
+- [appui.nav.navbar.go](https://github.com/kyoto-framework/uikit/blob/master/twui/appui.nav.navbar.go)
+- [appui.nav.navbar.html](https://github.com/kyoto-framework/uikit/blob/master/twui/appui.nav.navbar.html)
 
 ## Example
 

@@ -13,8 +13,8 @@ No notes
 
 ## Files
 
-- [appui.nav.sidebar.go](https://github.com/yuriizinets/kyoto-uikit/blob/master/twui/appui.nav.sidebar.go)
-- [appui.nav.sidebar.html](https://github.com/yuriizinets/kyoto-uikit/blob/master/twui/appui.nav.sidebar.html)
+- [appui.nav.sidebar.go](https://github.com/kyoto-framework/uikit/blob/master/twui/appui.nav.sidebar.go)
+- [appui.nav.sidebar.html](https://github.com/kyoto-framework/uikit/blob/master/twui/appui.nav.sidebar.html)
 
 ## Example
 
@@ -22,7 +22,7 @@ No notes
 func (p *PageExample) Init() {
 	p.Sidebar = kyoto.RegC(p, &AppUINavSidebar{
 		Logo: template.HTML(`<a href="/">
-			<img src="https://raw.githubusercontent.com/yuriizinets/kyoto/master/.web/docs/.vuepress/public/kyoto.svg" class="mx-auto h-16 w-16 scale-150" />
+			<img src="https://raw.githubusercontent.com/kyoto-framework/kyoto/master/.web/docs/.vuepress/public/kyoto.svg" class="mx-auto h-16 w-16 scale-150" />
 		</a>`),
 		Search: AppUINavSidebarSearch{
 			Enabled: true,

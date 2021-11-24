@@ -1,7 +1,7 @@
 ---
 home: true
 heroImage: /avatar.svg
-heroText: kyoto-uikit
+heroText: uikit
 tagline: Wake up, Samurai. We have a project to build
 actions:
   - text: General

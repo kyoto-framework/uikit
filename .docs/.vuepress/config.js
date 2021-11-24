@@ -1,6 +1,6 @@
 
 module.exports = {
-    title: 'kyoto-uikit',
+    title: 'uikit',
     description: 'Wake up, Samurai. We have a project to build',
 
     base: '/',

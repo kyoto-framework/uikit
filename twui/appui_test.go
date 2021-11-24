@@ -4,7 +4,7 @@ import (
 	"html/template"
 	"testing"
 
-	"github.com/yuriizinets/kyoto"
+	"github.com/kyoto-framework/kyoto"
 )
 
 type TestAppUIPage struct {
@@ -29,7 +29,7 @@ func (p *TestAppUIPage) Template() *template.Template {
 func (p *TestAppUIPage) Init() {
 	p.AppUINavNavbar = kyoto.RegC(p, &AppUINavNavbar{
 		Logo: template.HTML(`<a href="/">
-			<img src="https://raw.githubusercontent.com/yuriizinets/kyoto/master/.docs/.vuepress/public/kyoto.svg" class="h-8 w-8 scale-150" />
+			<img src="https://raw.githubusercontent.com/kyoto-framework/kyoto/master/.docs/.vuepress/public/kyoto.svg" class="h-8 w-8 scale-150" />
 		</a>`),
 		Links: []AppUINavNavbarLink{
 			{Text: "Dashboard", Href: "#"},
@@ -60,7 +60,7 @@ func (p *TestAppUIPage) Init() {
 	})
 	p.AppUINavSidebar = kyoto.RegC(p, &AppUINavSidebar{
 		Logo: template.HTML(`<a href="/">
-			<img src="https://raw.githubusercontent.com/yuriizinets/kyoto/master/.docs/.vuepress/public/kyoto.svg" class="mx-auto h-16 w-16 scale-150" />
+			<img src="https://raw.githubusercontent.com/kyoto-framework/kyoto/master/.docs/.vuepress/public/kyoto.svg" class="mx-auto h-16 w-16 scale-150" />
 		</a>`),
 		Search: AppUINavSidebarSearch{
 			Enabled: true,

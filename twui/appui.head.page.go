@@ -3,7 +3,7 @@ package twui
 import (
 	"html/template"
 
-	"github.com/yuriizinets/kyoto"
+	"github.com/kyoto-framework/kyoto"
 )
 
 type AppUIHeadPage struct {

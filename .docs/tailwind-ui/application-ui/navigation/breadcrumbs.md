@@ -13,8 +13,8 @@ No notes
 
 ## Files
 
-- [appui.nav.breadcrumbs.go](https://github.com/yuriizinets/kyoto-uikit/blob/master/twui/appui.nav.breadcrumbs.go)
-- [appui.nav.breadcrumbs.html](https://github.com/yuriizinets/kyoto-uikit/blob/master/twui/appui.nav.breadcrumbs.html)
+- [appui.nav.breadcrumbs.go](https://github.com/kyoto-framework/uikit/blob/master/twui/appui.nav.breadcrumbs.go)
+- [appui.nav.breadcrumbs.html](https://github.com/kyoto-framework/uikit/blob/master/twui/appui.nav.breadcrumbs.html)
 
 ## Example
 
