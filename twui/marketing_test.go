@@ -8,6 +8,7 @@ import (
 )
 
 type TestMarketingPage struct {
+	MarketingSectionPricing []kyoto.Component
 	MarketingSectionCTA     []kyoto.Component
 	MarketingSectionHero    kyoto.Component
 	MarketingSectionHero2   kyoto.Component
@@ -24,6 +25,182 @@ func (p *TestMarketingPage) Template() *template.Template {
 }
 
 func (p *TestMarketingPage) Init() {
+	p.MarketingSectionPricing = append(p.MarketingSectionPricing, kyoto.RegC(p, &MarketingSectionPricing{
+		Title:       "Pricing Plans",
+		Description: "Start building for free, then add a site plan to go live. Account plans unlock additional features.",
+		CardBlock: []MarketingSectionPricingCardBlock{
+			{
+				Title:         "Monthly billing",
+				FeaturesTitle: "What's included",
+				Cards: []MarketingSectionPricingCard{
+					{
+						Title:       "Hobby",
+						Description: "All the basics for starting a new business",
+						Price: MarketingSectionPricingCardPrice{
+							Value:    12,
+							Currency: "$",
+							Suffix:   "/mo",
+						},
+						Features: []string{
+							"Potenti felis, in cras at at ligula nunc.",
+							"Orci neque eget pellentesque",
+						},
+						CTALink: MarketingSectionPricingLink{
+							Text: "Buy Hobby",
+							Href: "/",
+						},
+					},
+					{
+						Title:       "Freelancer",
+						Description: "All the basics for starting a new business",
+						Price: MarketingSectionPricingCardPrice{
+							Value:    24,
+							Currency: "$",
+							Suffix:   "/mo",
+						},
+						Features: []string{
+							"Potenti felis, in cras at at ligula nunc.",
+							"Orci neque eget pellentesque",
+							"Donec mauris sit in eu tincidunt etiam.",
+						},
+						CTALink: MarketingSectionPricingLink{
+							Text: "Buy Freelancer",
+							Href: "/",
+						},
+					},
+					{
+						Title:       "Startup",
+						Description: "All the basics for starting a new business",
+						Price: MarketingSectionPricingCardPrice{
+							Value:    32,
+							Currency: "$",
+							Suffix:   "/mo",
+						},
+						Features: []string{
+							"Potenti felis, in cras at at ligula nunc.",
+							"Orci neque eget pellentesque",
+							"Donec mauris sit in eu tincidunt etiam.",
+							"Faucibus volutpat magna.",
+						},
+						CTALink: MarketingSectionPricingLink{
+							Text: "Buy Startup",
+							Href: "/",
+						},
+					},
+					{
+						Title:       "Enterprise",
+						Description: "All the basics for starting a new business",
+						Price: MarketingSectionPricingCardPrice{
+							Value:    48,
+							Currency: "$",
+							Suffix:   "/mo",
+						},
+						Features: []string{
+							"Potenti felis, in cras at at ligula nunc.",
+							"Orci neque eget pellentesque",
+							"Donec mauris sit in eu tincidunt etiam.",
+							"Faucibus volutpat magna.",
+							"Id sed tellus in varius quisque.",
+							"Risus egestas faucibus",
+							"Risus cursus ullamcorper",
+						},
+						CTALink: MarketingSectionPricingLink{
+							Text: "Buy Enterprise",
+							Href: "/",
+						},
+					},
+				},
+			},
+			{
+				Title:         "Yearly billing",
+				Inline:        true,
+				FeaturesTitle: "What's included",
+				Cards: []MarketingSectionPricingCard{
+					{
+						Title:       "Startup",
+						Description: "All the basics for starting a new business",
+						Price: MarketingSectionPricingCardPrice{
+							Value:    335,
+							Currency: "$",
+							Suffix:   "/year",
+						},
+						Features: []string{
+							"Potenti felis, in cras at at ligula nunc.",
+							"Orci neque eget pellentesque",
+							"Donec mauris sit in eu tincidunt etiam.",
+							"Faucibus volutpat magna.",
+						},
+						CTALink: MarketingSectionPricingLink{
+							Text: "Buy Startup",
+							Href: "/",
+						},
+					},
+					{
+						Title:       "Enterprise",
+						Description: "All the basics for starting a new business",
+						Price: MarketingSectionPricingCardPrice{
+							Value:    500,
+							Currency: "$",
+							Suffix:   "/year",
+						},
+						Features: []string{
+							"Potenti felis, in cras at at ligula nunc.",
+							"Orci neque eget pellentesque",
+							"Donec mauris sit in eu tincidunt etiam.",
+							"Faucibus volutpat magna.",
+							"Id sed tellus in varius quisque.",
+							"Risus egestas faucibus",
+							"Risus cursus ullamcorper",
+						},
+						CTALink: MarketingSectionPricingLink{
+							Text: "Buy Enterprise",
+							Href: "/",
+						},
+					},
+				},
+			},
+		},
+	}))
+	p.MarketingSectionPricing = append(p.MarketingSectionPricing, kyoto.RegC(p, &MarketingSectionPricing{
+		Title:       "Simple no-tricks pricing",
+		Description: "If you're not satisfied, contact us within the first 14 days and we'll send you a full refund",
+		CardBlock: []MarketingSectionPricingCardBlock{
+			{
+				Title:         "Yearly billing",
+				FeaturesTitle: "What's included",
+				Cards: []MarketingSectionPricingCard{
+					{
+						Title:       "Lifetime Membership",
+						Description: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptate officia, reprehenderit reiciendis quas alias doloribus, sed nobis provident.",
+						PriceTitle:  "Pay once, own it forever",
+						Price: MarketingSectionPricingCardPrice{
+							Value:    349,
+							Currency: "$",
+							Suffix:   "USD",
+						},
+						AdditionalInformation: MarketingSectionPricingLink{
+							Text: "Learn about our membership policy",
+							Href: "/",
+						},
+						CTALink: MarketingSectionPricingLink{
+							Text: "Get Access",
+							Href: "/",
+						},
+						Features: []string{
+							"Private forum access",
+							"Member resources",
+							"Entry to annual conference",
+							"Official member t-shirt",
+						},
+						FreeSample: MarketingSectionPricingCardSample{
+							Enabled: true,
+							Sample:  template.HTML(`<a href="/" class="text-sm">Get a free sample <span class="text-gray-500">(20 MB)</span></a>`),
+						},
+					},
+				},
+			},
+		},
+	}))
 	p.MarketingSectionCTA = append(p.MarketingSectionCTA, &MarketingSectionCTA{
 		Content: MarketingSectionCTAContent{
 			Title: MarketingSectionCTAContentText{
