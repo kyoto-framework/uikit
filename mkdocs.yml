@@ -1,0 +1,77 @@
+site_name: uikit
+site_url: https://uikit.kyoto.codes/
+site_author: Yurii Zinets
+site_description: >-
+  Wake up, Samurai. We have a project to build
+repo_url: https://github.com/kyoto-framework/uikit
+repo_name: kyoto-framework/uikit
+edit_uri: ""
+
+theme:
+  name: material
+  logo: assets/uikit.svg
+  palette:
+    - scheme: default
+      primary: black
+      toggle:
+        icon: material/weather-sunny
+        name: Switch to dark mode
+    - scheme: slate
+      primary: black
+      toggle:
+        icon: material/weather-night
+        name: Switch to light mode
+  features:
+    - navigation.indexes
+    - navigation.sections
+    - navigation.tabs
+    - navigation.top
+    - navigation.tracking
+    - content.code.annotate
+  
+markdown_extensions:
+  - pymdownx.highlight
+  - pymdownx.inlinehilite
+  - pymdownx.superfences
+  - pymdownx.snippets
+  - pymdownx.details
+  - admonition
+
+nav:
+  - Home: index.md
+  - Prologue: prologue.md
+  - Getting started:
+    - getting-started/index.md
+    - With starter: getting-started/with-starter.md
+    - From scratch: getting-started/from-scratch.md
+  - Tailwind UI:
+    - twui/index.md
+    - Application UI:
+      - twui/appui/index.md
+      - Navigation:
+        - twui/appui/navigation/index.md
+        - Navbar: twui/appui/navigation/navbar.md
+        - Sidebar: twui/appui/navigation/sidebar.md
+        - Breadcrumbs: twui/appui/navigation/breadcrumbs.md
+        - Pagination: twui/appui/navigation/pagination.md
+      - Heading:
+        - twui/appui/heading/index.md
+        - Page: twui/appui/heading/page.md
+      - Data:
+        - twui/appui/data/index.md
+        - Stats: twui/appui/data/stats.md
+      - Form:
+        - twui/appui/form/index.md
+        - Layout: twui/appui/form/layout.md
+      - List:
+        - twui/appui/list/index.md
+        - Table: twui/appui/list/table.md
+        - Feed: twui/appui/list/feed.md
+      - Overlay:
+        - twui/appui/overlay/index.md
+        - Modal: twui/appui/overlay/modal.md
+        - Side-over: twui/appui/overlay/side-over.md
+    - Marketing:
+      - twui/marketing/index.md
+    - E-Commerce:
+      - twui/e-commerce/index.md
