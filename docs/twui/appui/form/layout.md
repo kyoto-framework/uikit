@@ -1,11 +1,13 @@
 
-# Form Layout - `AppUIFormLayout`
+# Form Layout
+
+**`AppUIFormLayout`**
 
 Configurable Form Layout component
 
 ## UI
 
-![form](/examples/form.jpg)
+![form](/assets/examples/form.jpg)
 
 ## Notes
 

@@ -1,11 +1,13 @@
 
-# Pagination - `AppUINavPagination`
+# Pagination
+
+**`AppUINavPagination`**
 
 Basic pagination component
 
 ## UI
 
-![pagination](/examples/pagination.jpg)
+![pagination](/assets/examples/pagination.jpg)
 
 ## Notes
 

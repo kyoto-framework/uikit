@@ -1,11 +1,13 @@
 
-# Feed - `AppUIListFeed`
+# Feed
+
+**`AppUIListFeed`**
 
 Basic feed component
 
 ## UI
 
-![feed](/examples/feed.jpg)
+![feed](/assets/examples/feed.jpg)
 
 ## Notes
 

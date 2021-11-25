@@ -1,13 +1,15 @@
 
-# Side-Over - `AppUIOverlaySideover`
+# Side-over
+
+**`AppUIOverlaySideover`**
 
 Basic side-over component with raw html content
 
 ## UI
 
-![sideoverOpen](/examples/sideoverOpen.jpg)
+![sideoverOpen](/assets/examples/sideoverOpen.jpg)
 
-![sideover](/examples/sideover.jpg)
+<img style="margin-top: 10px; height: 500px" src="/assets/examples/sideover.jpg">
 
 ## Notes
 

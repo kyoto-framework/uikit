@@ -1,11 +1,13 @@
 
-# Breadcrumbs - `AppUINavBreadcrumbs`
+# Breadcrumbs
+
+**`AppUINavBreadcrumbs`**
 
 Configurable breadcrumbs component
 
 ## UI
 
-<img style="margin-top: 10px" src="/examples/breadcrumbs.jpg">
+<img style="margin-top: 10px" src="/assets/examples/breadcrumbs.jpg">
 
 ## Notes
 

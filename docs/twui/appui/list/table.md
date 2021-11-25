@@ -1,11 +1,13 @@
 
-# Table - `AppUIListTable`
+# Table
+
+**`AppUIListTable`**
 
 Basic table component
 
 ## UI
 
-![table](/examples/table.jpg)
+![table](/assets/examples/table.jpg)
 
 ## Notes
 

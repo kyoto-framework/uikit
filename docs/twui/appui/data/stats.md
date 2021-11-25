@@ -1,10 +1,13 @@
 
-# Stats - `AppUIDataStats`
+# Stats
+
+**`AppUIDataStats`**
 
 Stats component
+
 ## UI
 
-![stats](/examples/stats.jpg)
+![stats](/assets/examples/stats.jpg)
 
 ## Notes
 

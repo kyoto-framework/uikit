@@ -1,11 +1,13 @@
 
-# Sidebar - `AppUINavSidebar`
+# Sidebar
+
+**`AppUINavSidebar`**
 
 Basic sidebar component with set of "extensions", like search, profile badge, etc.
 
 ## UI
 
-<img style="margin-top: 10px" height="500" src="/examples/sidebar.jpg">
+<img style="margin-top: 10px; height: 500px" src="/assets/examples/sidebar.jpg">
 
 ## Notes
 

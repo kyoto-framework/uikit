@@ -1,11 +1,13 @@
 
-# Navbar - `AppUINavNavbar`
+# Navbar
+
+**`AppUINavNavbar`**
 
 Basic navbar component with set of "extensions", like search, notifications badge, profile badge, etc.
 
 ## UI
 
-![navbar](/examples/navbar.jpg)
+![navbar](/assets/examples/navbar.jpg)
 
 ## Notes
 

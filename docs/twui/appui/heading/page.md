@@ -1,11 +1,13 @@
 
-# Page - `AppUIHeadPage`
+# Page
+
+**`AppUIHeadPage`**
 
 Configurable Headings component for Pages
 
 ## UI
 
-![page](/examples/page.jpg)
+![page](/assets/examples/page.jpg)
 
 ## Notes
 

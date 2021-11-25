@@ -1,13 +1,15 @@
 
-# Modal - `AppUIOverlayModal`
+# Modal
+
+**`AppUIOverlayModal`**
 
 Basic modal component with raw html content
 
 ## UI
 
-![modalOpen](/examples/modalOpen.jpg)
+![modalOpen](/assets/examples/modalOpen.jpg)
 
-![modal](/examples/modal.jpg)
+![modal](/assets/examples/modal.jpg)
 
 ## Notes
 
