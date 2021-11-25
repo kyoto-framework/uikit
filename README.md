@@ -1,6 +1,6 @@
 
 <p align="center">
-    <img src="https://raw.githubusercontent.com/kyoto-framework/uikit/master/.docs/.vuepress/public/avatar.svg" />
+    <img src="https://raw.githubusercontent.com/kyoto-framework/uikit/master/docs/assets/uikit.svg" height="200" />
 </p>
 
 <h1 align="center">kyoto uikit</h1>
