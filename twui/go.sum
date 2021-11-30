@@ -2,3 +2,5 @@ github.com/kyoto-framework/kyoto v0.0.0-20211017170019-16887ac790b5 h1:nNob5Bo9I
 github.com/kyoto-framework/kyoto v0.0.0-20211017170019-16887ac790b5/go.mod h1:5mMUtxQ1AdsJNmpDih3NQC4PJWq1kbqx9IrRs+06ZRg=
 github.com/kyoto-framework/kyoto v0.0.0-20211021162023-fcc33fc36624 h1:rGSpNv6S/TnFCzcYMPFF2HmyWlKezSxeN20O5W/Qolw=
 github.com/kyoto-framework/kyoto v0.0.0-20211021162023-fcc33fc36624/go.mod h1:5mMUtxQ1AdsJNmpDih3NQC4PJWq1kbqx9IrRs+06ZRg=
+github.com/kyoto-framework/kyoto v0.1.3-0.20211129210257-b126086a72f5 h1:bqqcdftZRryIwuUVaawDtIpxdanhtU4DyrZ/zFOkccI=
+github.com/kyoto-framework/kyoto v0.1.3-0.20211129210257-b126086a72f5/go.mod h1:SmGi4PhmKsD5bYJ9FKtFLFqzGeCtRHlCZuvuOnQ3FQg=

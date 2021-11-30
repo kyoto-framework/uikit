@@ -8,22 +8,10 @@ import (
 )
 
 func serve(page kyoto.Page) {
-	ssatemplate := func(p kyoto.Page) *template.Template {
-		var err error
-		t := template.New("SSA").Funcs(kyoto.TFuncMap())
-		t, err = t.ParseGlob("*.html")
-		if err != nil {
-			panic(err)
-		}
-		return t
-	}
 	ssahandler := func() http.HandlerFunc {
-		return func(rw http.ResponseWriter, r *http.Request) {
-			kyoto.SSAHandlerFactory(ssatemplate, map[string]interface{}{
-				"internal:rw": rw,
-				"internal:r":  r,
-			})(rw, r)
-		}
+		return kyoto.SSAHandler(func(p kyoto.Page) *template.Template {
+			return template.Must(template.New("SSA").Funcs(kyoto.TFuncMap()).ParseGlob("*.html"))
+		})
 	}
 
 	http.HandleFunc("/", kyoto.PageHandler(page))
