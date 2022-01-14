@@ -5,7 +5,7 @@ import (
 	"math/rand"
 	"strconv"
 
-	"github.com/kyoto-framework/kyoto"
+	"github.com/kyoto-framework/kyoto/smode"
 )
 
 type AppUIOverlaySideover struct {
@@ -22,8 +22,8 @@ func (c *AppUIOverlaySideover) Init() {
 	}
 }
 
-func (c *AppUIOverlaySideover) Actions() kyoto.ActionMap {
-	return kyoto.ActionMap{
+func (c *AppUIOverlaySideover) Actions() smode.ActionMap {
+	return smode.ActionMap{
 		"Open": func(args ...interface{}) {
 			c.InternalActivated = true
 		},

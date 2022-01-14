@@ -3,7 +3,7 @@ package twui
 import (
 	"html/template"
 
-	"github.com/kyoto-framework/kyoto"
+	"github.com/kyoto-framework/kyoto/smode"
 )
 
 type AppUINavSidebar struct {
@@ -24,8 +24,8 @@ func (c *AppUINavSidebar) Init() {
 	}
 }
 
-func (c *AppUINavSidebar) Actions() kyoto.ActionMap {
-	return kyoto.ActionMap{
+func (c *AppUINavSidebar) Actions() smode.ActionMap {
+	return smode.ActionMap{
 		"Toggle": func(args ...interface{}) {
 			c.InternalHidden = !c.InternalHidden
 		},

@@ -3,7 +3,7 @@ package twui
 import (
 	"html/template"
 
-	"github.com/kyoto-framework/kyoto"
+	"github.com/kyoto-framework/kyoto/smode"
 )
 
 type MarketingSectionPricing struct {
@@ -14,8 +14,8 @@ type MarketingSectionPricing struct {
 	InternalActiveTab string
 }
 
-func (c *MarketingSectionPricing) Actions(p kyoto.Page) kyoto.ActionMap {
-	return kyoto.ActionMap{
+func (c *MarketingSectionPricing) Actions(p smode.Page) smode.ActionMap {
+	return smode.ActionMap{
 		"ToggleTabMenu": func(args ...interface{}) {
 			c.InternalActiveTab = args[0].(string)
 		},

@@ -5,6 +5,7 @@ import (
 	"testing"
 
 	"github.com/kyoto-framework/kyoto"
+	"github.com/kyoto-framework/kyoto/smode"
 )
 
 type TestAppUIPage struct {
@@ -27,7 +28,7 @@ func (p *TestAppUIPage) Template() *template.Template {
 }
 
 func (p *TestAppUIPage) Init() {
-	p.AppUINavNavbar = kyoto.RegC(p, &AppUINavNavbar{
+	p.AppUINavNavbar = smode.RegC(p, &AppUINavNavbar{
 		Logo: template.HTML(`<a href="/">
 			<img src="https://raw.githubusercontent.com/kyoto-framework/kyoto/master/.docs/.vuepress/public/kyoto.svg" class="h-8 w-8 scale-150" />
 		</a>`),
@@ -58,7 +59,7 @@ func (p *TestAppUIPage) Init() {
 			},
 		},
 	})
-	p.AppUINavSidebar = kyoto.RegC(p, &AppUINavSidebar{
+	p.AppUINavSidebar = smode.RegC(p, &AppUINavSidebar{
 		Logo: template.HTML(`<a href="/">
 			<img src="https://raw.githubusercontent.com/kyoto-framework/kyoto/master/.docs/.vuepress/public/kyoto.svg" class="mx-auto h-16 w-16 scale-150" />
 		</a>`),
@@ -117,24 +118,24 @@ func (p *TestAppUIPage) Init() {
 			Href: "#",
 		},
 	}
-	p.AppUINavBreadcrumbs = append(p.AppUINavBreadcrumbs, kyoto.RegC(p, &AppUINavBreadcrumbs{
+	p.AppUINavBreadcrumbs = append(p.AppUINavBreadcrumbs, smode.RegC(p, &AppUINavBreadcrumbs{
 		Links:     bclinks,
 		Separator: "slash",
 	}))
-	p.AppUINavBreadcrumbs = append(p.AppUINavBreadcrumbs, kyoto.RegC(p, &AppUINavBreadcrumbs{
+	p.AppUINavBreadcrumbs = append(p.AppUINavBreadcrumbs, smode.RegC(p, &AppUINavBreadcrumbs{
 		Links: bclinks,
 	}))
-	p.AppUINavBreadcrumbs = append(p.AppUINavBreadcrumbs, kyoto.RegC(p, &AppUINavBreadcrumbs{
+	p.AppUINavBreadcrumbs = append(p.AppUINavBreadcrumbs, smode.RegC(p, &AppUINavBreadcrumbs{
 		Links:     bclinks,
 		Contained: true,
 		Rounded:   true,
 	}))
-	p.AppUINavPagination = kyoto.RegC(p, &AppUINavPagination{
+	p.AppUINavPagination = smode.RegC(p, &AppUINavPagination{
 		Page:       97,
 		TotalPages: 100,
 	})
-	p.AppUIHeadPage = append(p.AppUIHeadPage, kyoto.RegC(p, &AppUIHeadPage{
-		Breadcrumbs: kyoto.RegC(p, &AppUINavBreadcrumbs{
+	p.AppUIHeadPage = append(p.AppUIHeadPage, smode.RegC(p, &AppUIHeadPage{
+		Breadcrumbs: smode.RegC(p, &AppUINavBreadcrumbs{
 			Links: []AppUINavBreadcrumbsLink{
 				{Text: "Jobs", Href: "#"},
 				{Text: "Engineering", Href: "#"},
@@ -180,10 +181,10 @@ func (p *TestAppUIPage) Init() {
 			},
 		},
 	}))
-	p.AppUIHeadPage = append(p.AppUIHeadPage, kyoto.RegC(p, &AppUIHeadPage{
+	p.AppUIHeadPage = append(p.AppUIHeadPage, smode.RegC(p, &AppUIHeadPage{
 		Banner: "https://source.unsplash.com/random/1024x400",
 		Avatar: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80",
-		Breadcrumbs: kyoto.RegC(p, &AppUINavBreadcrumbs{
+		Breadcrumbs: smode.RegC(p, &AppUINavBreadcrumbs{
 			Links: []AppUINavBreadcrumbsLink{
 				{Text: "Jobs", Href: "#"},
 				{Text: "Engineering", Href: "#"},
@@ -229,7 +230,7 @@ func (p *TestAppUIPage) Init() {
 			},
 		},
 	}))
-	p.AppUIOverlayModal = kyoto.RegC(p, &AppUIOverlayModal{
+	p.AppUIOverlayModal = smode.RegC(p, &AppUIOverlayModal{
 		ID: "TestModal",
 		Content: `
 			<div class="p-4">
@@ -238,7 +239,7 @@ func (p *TestAppUIPage) Init() {
 			</div>`,
 		MaxWidth: "max-w-screen-sm",
 	})
-	p.AppUIOverlaySideover = kyoto.RegC(p, &AppUIOverlaySideover{
+	p.AppUIOverlaySideover = smode.RegC(p, &AppUIOverlaySideover{
 		ID: "TestSideover",
 		Content: `
 			<div class="p-4">
@@ -247,7 +248,7 @@ func (p *TestAppUIPage) Init() {
 			</div>`,
 		MaxWidth: "max-w-md",
 	})
-	p.AppUIDataStats = kyoto.RegC(p, &AppUIDataStats{
+	p.AppUIDataStats = smode.RegC(p, &AppUIDataStats{
 		Items: []AppUIDataStatsItem{
 			{
 				Image: `
@@ -275,7 +276,7 @@ func (p *TestAppUIPage) Init() {
 			},
 		},
 	})
-	p.AppUIFormLayout = kyoto.RegC(p, &AppUIFormLayout{
+	p.AppUIFormLayout = smode.RegC(p, &AppUIFormLayout{
 		Action: "/",
 		Method: "GET",
 		Sections: []AppUIFormLayoutSection{
@@ -389,7 +390,7 @@ func (p *TestAppUIPage) Init() {
 			`,
 		})
 	}
-	p.AppUIListTable = kyoto.RegC(p, &AppUIListTable{
+	p.AppUIListTable = smode.RegC(p, &AppUIListTable{
 		Columns: []AppUIListTableColumn{
 			{Label: "Name", Key: "Name"},
 			{Label: "Title", Key: "Title"},
@@ -399,7 +400,7 @@ func (p *TestAppUIPage) Init() {
 		},
 		Rows: rows,
 	})
-	p.AppUIListFeed = kyoto.RegC(p, &AppUIListFeed{
+	p.AppUIListFeed = smode.RegC(p, &AppUIListFeed{
 		Entries: []AppUIListFeedEntry{
 			{
 				Icon:        `<img class="h-8 w-8 rounded-full" src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80">`,

@@ -3,7 +3,7 @@ package twui
 import (
 	"html/template"
 
-	"github.com/kyoto-framework/kyoto"
+	"github.com/kyoto-framework/kyoto/smode"
 )
 
 type MarketingSectionHero struct {
@@ -12,8 +12,8 @@ type MarketingSectionHero struct {
 	Body            MarketingSectionHeroBody
 }
 
-func (c *MarketingSectionHero) Actions(p kyoto.Page) kyoto.ActionMap {
-	return kyoto.ActionMap{
+func (c *MarketingSectionHero) Actions(p smode.Page) smode.ActionMap {
+	return smode.ActionMap{
 		"ToggleMobileMenu": func(args ...interface{}) {
 			c.Navbar.InternalMobileMenuOpened = !c.Navbar.InternalMobileMenuOpened
 		},

@@ -5,6 +5,7 @@ import (
 	"testing"
 
 	"github.com/kyoto-framework/kyoto"
+	"github.com/kyoto-framework/kyoto/smode"
 )
 
 type TestMarketingPage struct {
@@ -25,7 +26,7 @@ func (p *TestMarketingPage) Template() *template.Template {
 }
 
 func (p *TestMarketingPage) Init() {
-	p.MarketingSectionPricing = append(p.MarketingSectionPricing, kyoto.RegC(p, &MarketingSectionPricing{
+	p.MarketingSectionPricing = append(p.MarketingSectionPricing, smode.RegC(p, &MarketingSectionPricing{
 		Title:       "Pricing Plans",
 		Description: "Start building for free, then add a site plan to go live. Account plans unlock additional features.",
 		CardBlock: []MarketingSectionPricingCardBlock{
@@ -161,7 +162,7 @@ func (p *TestMarketingPage) Init() {
 			},
 		},
 	}))
-	p.MarketingSectionPricing = append(p.MarketingSectionPricing, kyoto.RegC(p, &MarketingSectionPricing{
+	p.MarketingSectionPricing = append(p.MarketingSectionPricing, smode.RegC(p, &MarketingSectionPricing{
 		Title:       "Simple no-tricks pricing",
 		Description: "If you're not satisfied, contact us within the first 14 days and we'll send you a full refund",
 		CardBlock: []MarketingSectionPricingCardBlock{
@@ -340,7 +341,7 @@ func (p *TestMarketingPage) Init() {
 		},
 		Image: "https://images.unsplash.com/photo-1551434678-e076c223a692?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2850&q=80",
 	})
-	p.MarketingSectionHero = kyoto.RegC(p, &MarketingSectionHero{
+	p.MarketingSectionHero = smode.RegC(p, &MarketingSectionHero{
 		Navbar: MarketingSectionHeroNavbar{
 			Enabled: true,
 			Logo: template.HTML(`<a href="/">
@@ -393,7 +394,7 @@ func (p *TestMarketingPage) Init() {
 			},
 		},
 	})
-	p.MarketingSectionHero2 = kyoto.RegC(p, &MarketingSectionHero{
+	p.MarketingSectionHero2 = smode.RegC(p, &MarketingSectionHero{
 		BackgroundImage: "https://wallpaperaccess.com/full/1093402.jpg",
 		Navbar: MarketingSectionHeroNavbar{
 			Centered: true,
@@ -444,7 +445,7 @@ func (p *TestMarketingPage) Init() {
 			},
 		},
 	})
-	p.MarketingSectionHero3 = kyoto.RegC(p, &MarketingSectionHero{
+	p.MarketingSectionHero3 = smode.RegC(p, &MarketingSectionHero{
 		Navbar: MarketingSectionHeroNavbar{
 			Enabled: true,
 			Logo: template.HTML(`<a href="/">
@@ -536,7 +537,7 @@ func (p *TestMarketingPage) Init() {
 			},
 		},
 	})
-	p.MarketingSectionFooter = kyoto.RegC(p, &MarketingSectionFooter{
+	p.MarketingSectionFooter = smode.RegC(p, &MarketingSectionFooter{
 		Main: MarketingSectionFooterMain{
 			Enabled: true,
 			Blocks: []MarketingSectionFooterMainBlock{
@@ -659,7 +660,7 @@ func (p *TestMarketingPage) Init() {
 			Centered: true,
 		},
 	})
-	p.MarketingSectionFooter2 = kyoto.RegC(p, &MarketingSectionFooter{
+	p.MarketingSectionFooter2 = smode.RegC(p, &MarketingSectionFooter{
 		Dark: true,
 		Main: MarketingSectionFooterMain{
 			Enabled: true,
@@ -821,7 +822,7 @@ func (p *TestMarketingPage) Init() {
 			},
 		},
 	})
-	p.MarketingSectionFooter3 = kyoto.RegC(p, &MarketingSectionFooter{
+	p.MarketingSectionFooter3 = smode.RegC(p, &MarketingSectionFooter{
 		Main: MarketingSectionFooterMain{
 			Enabled: true,
 			Reverse: true,
@@ -956,7 +957,7 @@ func (p *TestMarketingPage) Init() {
 			},
 		},
 	})
-	p.MarketingSectionFooter4 = kyoto.RegC(p, &MarketingSectionFooter{
+	p.MarketingSectionFooter4 = smode.RegC(p, &MarketingSectionFooter{
 		Simple: MarketingSectionFooterSimple{
 			Enabled:  true,
 			Text:     "© 2020 Workflow, Inc. All rights reserved",
@@ -1007,7 +1008,7 @@ func (p *TestMarketingPage) Init() {
 			},
 		},
 	})
-	p.MarketingSectionFooter5 = kyoto.RegC(p, &MarketingSectionFooter{
+	p.MarketingSectionFooter5 = smode.RegC(p, &MarketingSectionFooter{
 		Simple: MarketingSectionFooterSimple{
 			Enabled: true,
 			Text:    "© 2020 Workflow, Inc. All rights reserved",

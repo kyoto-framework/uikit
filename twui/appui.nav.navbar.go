@@ -3,7 +3,7 @@ package twui
 import (
 	"html/template"
 
-	"github.com/kyoto-framework/kyoto"
+	"github.com/kyoto-framework/kyoto/smode"
 )
 
 type AppUINavNavbar struct {
@@ -17,8 +17,8 @@ type AppUINavNavbar struct {
 	InternalMobileMenuActivated bool
 }
 
-func (c *AppUINavNavbar) Actions(p kyoto.Page) kyoto.ActionMap {
-	return kyoto.ActionMap{
+func (c *AppUINavNavbar) Actions(p smode.Page) smode.ActionMap {
+	return smode.ActionMap{
 		"ToggleProfile": func(args ...interface{}) {
 			if len(c.Profile.Links) != 0 {
 				c.InternalProfileActivated = !c.InternalProfileActivated
