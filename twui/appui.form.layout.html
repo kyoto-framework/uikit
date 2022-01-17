@@ -6,6 +6,8 @@
   method="{{ .Method }}"
   class="w-full flex flex-col gap-9"
 >
+{{ else }}
+<div class="w-full flex flex-col gap-9">
 {{ end }}
 
 <!-- Sections -->
@@ -92,6 +94,8 @@
  
 {{ if .Action }}
 </form>
+{{ else }}
+</div>
 {{ end }}
 
 {{ end }}
