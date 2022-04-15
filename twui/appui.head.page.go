@@ -3,7 +3,7 @@ package twui
 import (
 	"html/template"
 
-	"github.com/kyoto-framework/kyoto"
+	"github.com/kyoto-framework/kyoto/smode"
 )
 
 type AppUIHeadPage struct {
@@ -11,7 +11,7 @@ type AppUIHeadPage struct {
 	Subtitle    string
 	Actions     []AppUIHeadPageAction
 	Meta        []AppUIHeadPageMeta
-	Breadcrumbs kyoto.Component
+	Breadcrumbs smode.Component
 	Banner      string // url
 	Avatar      string // url
 }

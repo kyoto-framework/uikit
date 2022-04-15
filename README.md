@@ -53,15 +53,15 @@ import (
 
 
 type PageExample struct {
-    Stats kyoto.Component
+    Stats smode.Component
 }
 
 func (p *PageExample) Template() *template.Template {
-    return template.Must(template.New("page.example.html").Funcs(kyoto.TFuncMap()).ParseGlob("templates/*.html"))
+    return template.Must(template.New("page.example.html").Funcs(smode.FuncMap(p)).ParseGlob("templates/*.html"))
 }
 
 func (p *PageExample) Init() {
-    p.Stats = kyoto.RegC(p, &twui.AppUIDataStats{
+    p.Stats = smode.UseC(p, &twui.AppUIDataStats{
         Items: []twui.AppUIDataStatsItem{
             {
                 Image: `

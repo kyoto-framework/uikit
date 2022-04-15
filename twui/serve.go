@@ -15,8 +15,16 @@ func serve(page smode.Page) {
 		smode.Adapt(page),
 	))
 	http.HandleFunc("/internal/actions/", actions.Handler(func(c *kyoto.Core) *template.Template {
-		return template.Must(template.New("Actions").Funcs(render.FuncMap(c)).Parse("*.html"))
+		return template.Must(template.New("Actions").Funcs(render.FuncMap(c)).ParseGlob("*.html"))
 	}))
+
+	smode.Register(
+		&AppUINavSidebar{},
+		&AppUIOverlayModal{},
+		&AppUIOverlaySideover{},
+		&MarketingSectionHero{},
+		&MarketingSectionPricing{},
+	)
 
 	println("Listening on http://localhost:25025")
 	http.ListenAndServe("localhost:25025", nil)
