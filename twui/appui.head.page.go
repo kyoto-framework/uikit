@@ -25,5 +25,6 @@ type AppUIHeadPageAction struct {
 	Icon    template.HTML
 	Text    string
 	Href    string
+	Action  template.JS
 	Primary bool
 }
