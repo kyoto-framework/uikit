@@ -1,4 +1,10 @@
 
+# Temporarily archived
+
+Will be used as a basement for a newer version, compatible with latest kyoto changes.
+
+---
+
 <p align="center">
     <img src="https://raw.githubusercontent.com/kyoto-framework/uikit/master/docs/assets/uikit.svg" height="200" />
 </p>
